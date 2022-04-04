@@ -1,0 +1,137 @@
+# This is the user personal configuration for job submission and execution for FabNEPTUNE plugin
+# All given variable here will be override machine settings loaded from (a) FabSim3/deploy/machines.yml and (b) FabSim3/deploy/machines_user.yml 
+# 
+# Here, you can find some examples for pre-defined remote machines
+# All env variable can be modified here and will overwrite setting in machines.yml and machines_user.yml
+# -*- coding: utf-8 -*-
+#
+# This source file is part of the FabSim software toolkit, which is
+# distributed under the BSD 3-Clause license.
+# Please refer to LICENSE for detailed information regarding the licensing.
+#
+
+# This file contains FabSim definitions specific to FabNEPTUNE.
+# authors:
+#           Kevin Bronik, Derek Groen, Ed Threlfall
+
+required_py_packages: &PY_PKG ["easyvvuq"] 
+
+default:
+  # example : 
+  #         exe_file: "app.py"
+  #         exe_prefix: "python3"
+  # or
+  #         exe_file: "app.sh"
+  #         exe_prefix: "bash"
+  # this env variables will be used in case of env.script=generic_app
+  # exe_file should be located inside the target config_files folder
+  exe_file: ""
+  exe_prefix: ""
+
+  FabNEPTUNE_params:
+    convection_input: "convection_Xd.xml"
+    convection_2d_input: "convection_2d.xml"
+    convection_3d_input: "convection_3d.xml"
+    sweep_dir_name: "SWEEP"
+
+
+  prevent_results_overwrite: "delete"
+
+
+localhost:
+
+  convection_2d_exec: "/home/kevin/Desktop/nekk/nektar++/build/dist/bin/IncNavierStokesSolver"
+  convection_3d_exec: "/home/kevin/Desktop/nekk/nektar++/build/dist/bin/IncNavierStokesSolver"
+
+  FabNEPTUNE_params:
+    convection_input: "convection_Xd.xml"
+    convection_2d_input: "convection_2d.xml"
+    convection_3d_input: "convection_3d.xml"
+    sweep_dir_name: "SWEEP"
+
+  cores: 8
+
+eagle_hidalgo:
+  # location of lmp_serial on the remote machine
+  convection_2d_exec: "/home/kevin/Desktop/nekk/nektar++/build/dist/bin/IncNavierStokesSolver"
+  convection_3d_exec: "/home/kevin/Desktop/nekk/nektar++/build/dist/bin/IncNavierStokesSolver"
+
+
+  cores: 1
+  # format days-hours:minutes:seconds
+  job_wall_time : "0-0:10:00"
+  partition_name: "fast"
+
+
+  py_pkg: *PY_PKG
+
+  modules:
+    # list of modules to be loaded on remote machine
+    loaded: ["python/3.7.3", "openmpi/4.0.0_gcc620"]
+    # list of modules to be unloaded on remote machine
+    unloaded: ["python"]  
+
+eagle_vecma:
+  # location of lmp_serial on the remote machine
+  convection_2d_exec: "/home/kevin/Desktop/nekk/nektar++/build/dist/bin/IncNavierStokesSolver"
+  convection_3d_exec: "/home/kevin/Desktop/nekk/nektar++/build/dist/bin/IncNavierStokesSolver"
+  cores: 28
+  # format days-hours:minutes:seconds
+  job_wall_time : "0-0:10:00"
+  partition_name: "fast"
+
+  modules:
+    # list of modules to be loaded on remote machine
+    loaded: ["openmpi/4.0.0_gcc620", "lammps/15Apr2020", "gromacs/2018_mpi", "namd", "amber"]
+    # list of modules to be unloaded on remote machine
+    unloaded: ["python"]
+
+
+cirrus:
+    # location of lmp_serial on the remote machine
+  convection_2d_exec: "/home/kevin/Desktop/nekk/nektar++/build/dist/bin/IncNavierStokesSolver"
+  convection_3d_exec: "/home/kevin/Desktop/nekk/nektar++/build/dist/bin/IncNavierStokesSolver"
+
+  modules:
+      # list of modules to be loaded on remote machine
+      loaded: [ "anaconda/python3"]
+
+archer2:
+    # location of lmp_serial on the remote machine
+  convection_2d_exec: "/mnt/lustre/a2fs-work2/work/e723/e723/kevinb/nektarpp/build/dist/bin/IncNavierStokesSolver"
+  convection_3d_exec: "/mnt/lustre/a2fs-work2/work/e723/e723/kevinb/nektarpp/build/dist/bin/IncNavierStokesSolver"
+
+  FabNEPTUNE_params:
+    convection_input: "convection_Xd.xml"
+    convection_2d_input: "convection_2d.xml"
+    convection_3d_input: "convection_3d.xml"
+    sweep_dir_name: "SWEEP"
+
+#  run_command_SCEMa: "srun --nodes=1 --ntasks=1 --oversubscribe --mem=1500M"  <----- dask
+  run_command_remote: "srun --nodes=1 --ntasks=1 --exclusive --oversubscribe --mem=25000M"
+#  run_command_remote: "srun --distribution=block:block --hint=nomultithread"
+#  run_command_remote: "srun --nodes=1 --ntasks=1 --exclusive --oversubscribe --mem=5500M"
+
+
+ohm:
+    # location of lmp_serial on the remote machine
+  convection_2d_exec: "/home/kevin/Desktop/nekk/nektar++/build/dist/bin/IncNavierStokesSolver"
+  convection_3d_exec: "/home/kevin/Desktop/nekk/nektar++/build/dist/bin/IncNavierStokesSolver"
+
+  cores: 2
+
+      # list of modules to be loaded on remote machine
+#      loaded: [ "fftw/2.1.5/intel-2015-update2" ]
+
+Kathleen:
+    # location of lmp_serial on the remote machine
+  convection_2d_exec: "/home/kevin/Desktop/nekk/nektar++/build/dist/bin/IncNavierStokesSolver"
+  convection_3d_exec: "/home/kevin/Desktop/nekk/nektar++/build/dist/bin/IncNavierStokesSolver"
+  cores: 28
+
+  modules:
+      # list of modules to be loaded on remote machine
+      loaded: [ "python/3.7.4"]
+
+
+

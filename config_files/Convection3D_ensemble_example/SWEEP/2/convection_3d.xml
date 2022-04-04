@@ -1,0 +1,160 @@
+
+<?xml version="1.0" encoding="utf-8" ?>
+<NEKTAR>
+    <EXPANSIONS>
+        <E COMPOSITE="C[0]" NUMMODES="4" FIELDS="u,v,w,T,p" TYPE="GLL_LAGRANGE_SEM" />  <!-- NUMMODES (integer 2,3,4, ...) controls the accuracy -->
+    </EXPANSIONS>
+
+
+    <CONDITIONS>
+        <SOLVERINFO>
+          <I PROPERTY="SOLVERTYPE"              VALUE="VCSWeakPressure"/>
+          <I PROPERTY="EQTYPE"                  VALUE="UnsteadyNavierStokes"    />
+          <I PROPERTY="Projection"              VALUE="Continuous"              />
+          <I PROPERTY="EvolutionOperator"       VALUE="Nonlinear"               />
+          <I PROPERTY="TimeIntegrationMethod"   VALUE="IMEXOrder2"              />
+          <I PROPERTY="Driver"                  VALUE="Standard"                />
+          <I PROPERTY="SpectralVanishingViscosity" VALUE="True"                 />
+          <I PROPERTY="SpectralHPDealiasing"       VALUE="True"                 />
+        </SOLVERINFO>
+
+        <VARIABLES>
+            <V ID="0"> u </V>  <!-- x velocity cpt -->
+            <V ID="1"> v </V>  <!-- y velocity cpt -->
+            <V ID="2"> w </V>  <!-- z velocity cpt -->
+            <V ID="3"> T </V>  <!-- temperature --> 
+            <V ID="4"> p </V>  <!-- pressure -->
+        </VARIABLES>
+
+
+        <GLOBALSYSSOLNINFO>
+            <V VAR="u,v,w,T,p">
+               <I PROPERTY="IterativeSolverTolerance"  VALUE="1e-6"/>
+            </V>
+        </GLOBALSYSSOLNINFO>
+
+        <PARAMETERS>
+            <P> TimeStep        = 0.02                </P>  <!-- too big a value makes propagation unstable -->
+            <P> T_Final         = 2.0                 </P>  <!-- value c.0.015 here seems to reach a steady state -->
+            <P> NumSteps        = T_Final/TimeStep    </P>
+<!--
+            <P> IO_CheckSteps   = 50                  </P>  <!-- turn on to output field data every 50 steps -->
+-->
+            <P> IO_infoSteps    = 10                  </P>
+            <P> Ra              = 1.0E2               </P>  <!-- Rayleigh number - the main adj parameter in the problem -->
+            <P> Pr              = 7.0                 </P>  <!-- Prandtl number - for water -->
+            <P> Kinvis          = Pr                  </P>
+        </PARAMETERS>
+
+
+        <BOUNDARYREGIONS>
+            <B ID="0"> C[1] </B>
+            <B ID="1"> C[2] </B>
+            <B ID="2"> C[3] </B>
+            <B ID="3"> C[4] </B>
+            <B ID="4"> C[5] </B>
+            <B ID="5"> C[6] </B>
+        </BOUNDARYREGIONS>
+
+        <BOUNDARYCONDITIONS>
+            <REGION REF="0"> <!-- xmin -->
+                <D VAR="u" VALUE="0" />
+                <D VAR="v" VALUE="0" />
+                <D VAR="w" VALUE="0" />
+                <D VAR="T" VALUE="0.5" />
+                <N VAR="p" USERDEFINEDTYPE="H" VALUE="0" />
+            </REGION>
+            <REGION REF="1"> <!-- xmax -->
+                <D VAR="u" VALUE="0" />
+                <D VAR="v" VALUE="0" />
+                <D VAR="w" VALUE="0" />
+                <D VAR="T" VALUE="-0.5" />
+                <N VAR="p" USERDEFINEDTYPE="H" VALUE="0" />
+            </REGION>
+            <REGION REF="2"> <!-- ymin -->
+                <D VAR="u" VALUE="0" />
+                <D VAR="v" VALUE="0" />
+                <D VAR="w" VALUE="0" />
+                <N VAR="T" VALUE="0" />
+                <N VAR="p" USERDEFINEDTYPE="H" VALUE="0" />
+            </REGION>
+            <REGION REF="3"> <!-- ymax -->
+                <D VAR="u" VALUE="0" />
+                <D VAR="v" VALUE="0" />
+                <D VAR="w" VALUE="0" />
+                <N VAR="T" VALUE="0" />
+                <N VAR="p" USERDEFINEDTYPE="H" VALUE="0" />
+            </REGION>
+            <REGION REF="4"> <!-- zmin -->
+                <D VAR="u" VALUE="0" />
+                <D VAR="v" VALUE="0" />
+                <D VAR="w" VALUE="0" />
+                <N VAR="T" VALUE="0" />
+                <N VAR="p" USERDEFINEDTYPE="H" VALUE="0" />
+            </REGION>
+            <REGION REF="5"> <!-- zmax -->
+                <D VAR="u" VALUE="0" />
+                <D VAR="v" VALUE="0" />
+                <D VAR="w" VALUE="0" />
+                <N VAR="T" VALUE="0" />
+                <N VAR="p" USERDEFINEDTYPE="H" VALUE="0" />
+            </REGION>
+        </BOUNDARYCONDITIONS>
+
+<!-- the following can be used to initialize a conducting solution
+     but for higher Ra values the resulting transient makes the simulation
+     unstable and necessitates a smaller timestep
+     using a file initial condition (below) works better (run with low number of modes and use that as initial data for higher resolution run)
+-->
+
+
+        <FUNCTION NAME="InitialConditions">
+            <E VAR="u" VALUE="0" />
+            <E VAR="v" VALUE="0" />
+            <E VAR="w" VALUE="0" />
+            <E VAR="T" VALUE="1.0-x" />
+            <E VAR="p" VALUE="0" />
+        </FUNCTION>
+
+
+<!--
+        <FUNCTION NAME="InitialConditions">
+             <F FILE="filename.fld" />
+        </FUNCTION> 
+--> 
+
+<!-- this is the buoyancy force in the Boussinesq approximation -->
+        <FUNCTION NAME="BodyForce">
+            <E VAR="u" VALUE="0" EVARS="u v w T p" />
+            <E VAR="v" VALUE="0" EVARS="u v w T p" />
+            <E VAR="w" VALUE="Ra*Pr*T" EVARS="u v w T p" />
+            <E VAR="T" VALUE="0" EVARS="u v w T p"  />
+        </FUNCTION>
+
+        <FUNCTION NAME="DiffusionCoefficient">
+            <E VAR="T" VALUE="1.0" />
+        </FUNCTION>
+
+    </CONDITIONS>
+
+    <FORCING>
+        <FORCE TYPE="Body">
+            <BODYFORCE> BodyForce </BODYFORCE>
+        </FORCE>
+    </FORCING>
+
+    <FILTERS>
+        <FILTER TYPE="AeroForces">
+            <PARAM NAME="OutputFile"> Nusselt_zmin </PARAM>
+            <PARAM NAME="OutputFrequency"> 10        </PARAM>
+            <PARAM NAME="Boundary"> B[4]              </PARAM>
+        </FILTER>
+        <FILTER TYPE="AeroForces">
+            <PARAM NAME="OutputFile"> Nusselt_zmax </PARAM>
+            <PARAM NAME="OutputFrequency"> 10        </PARAM>
+            <PARAM NAME="Boundary"> B[5]              </PARAM>
+        </FILTER>
+    </FILTERS>
+
+
+</NEKTAR>

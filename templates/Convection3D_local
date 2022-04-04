@@ -1,0 +1,17 @@
+cd $job_results
+$run_prefix
+
+/usr/bin/env > env.log
+
+echo "Start $convection_3d_exec program..."
+start_time="$(date -u +%s.%n)"
+echo "input xml file name:  $convection_3d_input"
+
+
+$run_command  $convection_3d_exec  $convection_3d_input  convection_3d_mesh.xml
+
+echo "Done ..."
+end_time="$(date -u +%s.%n)"
+elapsed="$(bc <<<"$end_time-$start_time")"
+echo -e "\n\nTotal Executing Time = $elapsed seconds\n" > time.txt
+

@@ -1,0 +1,50 @@
+parameters:
+    # <parameter_name:>
+    #   uniform_range: [<lower value>,<upper value>] 
+    Rayleigh:
+        uniform_range: [0.5, 1.5]
+    Prandtl:
+        uniform_range: [5, 8.0]
+    DiffusionCoefficient:
+        uniform_range: [0.5, 2.0]
+
+selected_parameters: ["Rayleigh",  'Prandtl', 'DiffusionCoefficient']
+
+polynomial_order: 3
+
+campaign_name: "FabNEPTUNE"
+
+encoder_delimiter: "@"
+
+encoder_template_fname : "convection_2d_remote.template"
+encoder_target_filename: "convection_2d.xml"
+decoder_target_filename: "output.csv"
+
+decoder_output_columns: ['F1-press_L']
+
+params:
+  Rayleigh:
+    type: "float"
+    min: "0.0"
+    max: "2.5"
+    default: "1.0"
+
+  Prandtl:
+    type: "float"
+    min: "0.0"
+    max: "8.5"
+    default: "7.0"
+
+  DiffusionCoefficient:
+    type: "float"
+    min: "0.0"
+    max: "2.5"
+    default: "1.0"
+
+sampler_name: "PCESampler"
+distribution_type: "Uniform" # Uniform, DiscreteUniform
+quadrature_rule: "G"
+sparse: False
+growth: False
+midpoint_level1: False
+dimension_adaptive: False

@@ -1,0 +1,5 @@
+[
+  "test_fabmd.py::test_lammps",
+  "test_fabmd.py::test_lammps_ensemble1",
+  "test_fabmd.py::test_lammps_ensemble2"
+]

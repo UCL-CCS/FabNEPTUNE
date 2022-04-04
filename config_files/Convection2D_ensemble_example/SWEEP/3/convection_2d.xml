@@ -1,0 +1,153 @@
+
+<?xml version="1.0" encoding="utf-8" ?>
+<NEKTAR>
+    <EXPANSIONS>
+        <E COMPOSITE="C[0]" NUMMODES="4" FIELDS="u,v,T,p" TYPE="GLL_LAGRANGE_SEM" />  <!-- NUMMODES (integer 2,3,4, ...) controls the accuracy; NUMMODES=p+1 in spectral-hp language -->
+    </EXPANSIONS>
+
+
+    <CONDITIONS>
+        <SOLVERINFO>
+          <I PROPERTY="SOLVERTYPE"              VALUE="VCSWeakPressure"         />
+          <I PROPERTY="EQTYPE"                  VALUE="UnsteadyNavierStokes"    />
+          <I PROPERTY="Projection"              VALUE="Continuous"              />
+          <I PROPERTY="EvolutionOperator"       VALUE="Nonlinear"               />
+          <I PROPERTY="TimeIntegrationMethod"   VALUE="IMEXOrder2"              />
+          <I PROPERTY="Driver"                  VALUE="Standard"                />
+          <I PROPERTY="SpectralVanishingViscosity" VALUE="True"                 />
+          <I PROPERTY="SpectralHPDealiasing"       VALUE="True"                 />
+        </SOLVERINFO>
+
+        <VARIABLES>
+            <V ID="0"> u </V>  <!-- horizontal velocity cpt -->
+            <V ID="1"> v </V>  <!-- vertical velocity cpt -->
+            <V ID="2"> T </V>  <!-- temperature --> 
+            <V ID="3"> p </V>  <!-- pressure -->
+        </VARIABLES>
+
+
+        <GLOBALSYSSOLNINFO>
+            <V VAR="u,v,T,p">
+               <I PROPERTY="IterativeSolverTolerance"  VALUE="1e-6"/>
+            </V>
+        </GLOBALSYSSOLNINFO>
+
+        <PARAMETERS>
+            <P> TimeStep        = 0.003                 </P>  <!-- too big a value makes propagation unstable -->
+            <P> T_Final         = 3.0                  </P> 
+            <P> NumSteps        = T_Final/TimeStep     </P>
+<!--
+            <P> IO_CheckSteps   = 50                   </P>  <!-- turn on to output field data every 50 steps -->
+-->
+            <P> IO_infoSteps    = 10                   </P>
+            <P> Ra              = 1.0E2                </P>  <!-- Rayleigh number - the main adj parameter in the problem -->
+            <P> Pr              = 7.0                  </P>  <!-- Prandtl number - for water -->
+            <P> Kinvis          = Pr                   </P>
+        </PARAMETERS>
+
+
+        <BOUNDARYREGIONS>
+            <B ID="0"> C[1] </B>
+            <B ID="1"> C[2] </B>
+            <B ID="2"> C[3] </B>
+            <B ID="3"> C[4] </B>
+        </BOUNDARYREGIONS>
+
+        <BOUNDARYCONDITIONS>
+            <REGION REF="0"> <!-- bottom (insulated) -->
+                <D VAR="u" VALUE="0" />
+                <D VAR="v" VALUE="0" />
+                <N VAR="T" VALUE="0" />
+                <N VAR="p" USERDEFINEDTYPE="H" VALUE="0" />
+            </REGION>
+            <REGION REF="1"> <!-- top (insulated) -->
+                <D VAR="u" VALUE="0" />
+                <D VAR="v" VALUE="0" />
+                <N VAR="T" VALUE="0" />
+                <N VAR="p" USERDEFINEDTYPE="H" VALUE="0" />
+            </REGION>
+            <REGION REF="2"> <!-- left (hot) -->
+                <D VAR="u" VALUE="0" />
+                <D VAR="v" VALUE="0" />
+                <D VAR="T" VALUE="1" />
+                <N VAR="p" USERDEFINEDTYPE="H" VALUE="0" />
+            </REGION>
+            <REGION REF="3"> <!-- right (cold) -->
+                <D VAR="u" VALUE="0" />
+                <D VAR="v" VALUE="0" />
+                <D VAR="T" VALUE="0" />
+                <N VAR="p" USERDEFINEDTYPE="H" VALUE="0" />
+            </REGION>
+        </BOUNDARYCONDITIONS>
+
+<!-- the following can be used to initialize a conducting solution
+     but for higher Ra values the resulting transient makes the simulation
+     unstable and necessitates a smaller timestep
+     using the file initial condition, as below, works better.
+-->
+
+        <FUNCTION NAME="InitialConditions">
+            <E VAR="u" VALUE="0" />
+            <E VAR="v" VALUE="0" />
+            <E VAR="T" VALUE="1-x" />
+            <E VAR="p" VALUE="0" />
+        </FUNCTION>
+
+<!--
+        <FUNCTION NAME="InitialConditions">
+             <F FILE="filename.fld" />
+        </FUNCTION> 
+-->
+
+<!-- this is the buoyancy force in the Boussinesq approximation -->
+        <FUNCTION NAME="BodyForce">
+            <E VAR="u" VALUE="0" EVARS="u v T p" />
+            <E VAR="v" VALUE="Ra*Pr*T" EVARS="u v T p" />
+            <E VAR="T" VALUE="0" EVARS="u v T p"  />
+        </FUNCTION>
+
+        <FUNCTION NAME="DiffusionCoefficient">
+            <E VAR="T" VALUE="1.0" />
+        </FUNCTION>
+
+    </CONDITIONS>
+
+    <FORCING>
+        <FORCE TYPE="Body">
+            <BODYFORCE> BodyForce </BODYFORCE>
+        </FORCE>
+    </FORCING>
+
+    <FILTERS>
+<!--  NOTE AeroForces filters commented out here as code needs modification to calculate Nusselt number, won't work with unmodified Nektar++ code! -->
+
+        <FILTER TYPE="AeroForces">
+            <PARAM NAME="OutputFile"> NusseltTest1L </PARAM>
+            <PARAM NAME="OutputFrequency"> 10        </PARAM>
+            <PARAM NAME="Boundary"> B[2]              </PARAM>
+        </FILTER>
+
+        <FILTER TYPE="AeroForces">
+            <PARAM NAME="OutputFile"> NusseltTest1R </PARAM>
+            <PARAM NAME="OutputFrequency"> 10        </PARAM>
+            <PARAM NAME="Boundary"> B[3]              </PARAM>
+        </FILTER>
+
+<!-- field-at-point QoI -->
+
+        <FILTER TYPE="HistoryPoints">
+            <PARAM NAME="OutputFile"> PointTest </PARAM>
+            <PARAM NAME="OutputFrequency"> 10      </PARAM>
+            <PARAM NAME="Points"> 0.5 1.0 0.0   </PARAM>
+        </FILTER>
+
+<!-- filter to obtain averaged background field, run over integer number of periods -->
+
+	<FILTER TYPE="AverageFields">
+    	    <PARAM NAME="OutputFile"> AveragedTest </PARAM>
+            <PARAM NAME="SampleFrequency"> 10 </PARAM>
+	</FILTER>
+    </FILTERS>
+
+
+</NEKTAR>

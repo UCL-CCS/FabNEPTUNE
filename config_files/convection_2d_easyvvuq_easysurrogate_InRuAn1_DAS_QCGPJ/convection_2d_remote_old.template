@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<NEKTAR>
+    <EXPANSIONS>
+        <E COMPOSITE="C[0]" NUMMODES="4" FIELDS="u,v,T,p" TYPE="GLL_LAGRANGE_SEM" />
+    </EXPANSIONS>
+    <CONDITIONS>
+        <SOLVERINFO>
+          <I PROPERTY="SOLVERTYPE"              VALUE="VCSWeakPressure"         />
+          <I PROPERTY="EQTYPE"                  VALUE="UnsteadyNavierStokes"    />
+          <I PROPERTY="Projection"              VALUE="Continuous"              />
+          <I PROPERTY="EvolutionOperator"       VALUE="Nonlinear"               />
+          <I PROPERTY="TimeIntegrationMethod"   VALUE="IMEXOrder2"              />
+          <I PROPERTY="Driver"                  VALUE="Standard"                />
+          <I PROPERTY="SpectralVanishingViscosity" VALUE="True"                 />
+          <I PROPERTY="SpectralHPDealiasing"       VALUE="True"                 />
+        </SOLVERINFO>
+        <VARIABLES>
+            <V ID="0"> u </V>
+            <V ID="1"> v </V>
+            <V ID="2"> T </V>
+            <V ID="3"> p </V>
+        </VARIABLES>
+        <GLOBALSYSSOLNINFO>
+            <V VAR="u,v,T,p">
+               <I PROPERTY="IterativeSolverTolerance"  VALUE="1e-6"/>
+            </V>
+        </GLOBALSYSSOLNINFO>
+        <PARAMETERS>
+            <P> TimeStep        = 0.0001                 </P>
+            <P> T_Final         = 1.0                  </P>
+            <P> NumSteps        = T_Final/TimeStep     </P>
+            <P> IO_infoSteps    = 10                   </P>
+            <P> Ra              = ${Rayleigh}E2                </P>
+            <P> Pr              = ${Prandtl}                  </P>
+            <P> Kinvis          = Pr                   </P>
+        </PARAMETERS>
+        <BOUNDARYREGIONS>
+            <B ID="0"> C[1] </B>
+            <B ID="1"> C[2] </B>
+            <B ID="2"> C[3] </B>
+            <B ID="3"> C[4] </B>
+        </BOUNDARYREGIONS>
+        <BOUNDARYCONDITIONS>
+            <REGION REF="0">
+                <D VAR="u" VALUE="0" />
+                <D VAR="v" VALUE="0" />
+                <N VAR="T" VALUE="0" />
+                <N VAR="p" USERDEFINEDTYPE="H" VALUE="0" />
+            </REGION>
+            <REGION REF="1"> <!-- top (insulated) -->
+                <D VAR="u" VALUE="0" />
+                <D VAR="v" VALUE="0" />
+                <N VAR="T" VALUE="0" />
+                <N VAR="p" USERDEFINEDTYPE="H" VALUE="0" />
+            </REGION>
+            <REGION REF="2">
+                <D VAR="u" VALUE="0" />
+                <D VAR="v" VALUE="0" />
+                <D VAR="T" VALUE="1" />
+                <N VAR="p" USERDEFINEDTYPE="H" VALUE="0" />
+            </REGION>
+            <REGION REF="3">
+                <D VAR="u" VALUE="0" />
+                <D VAR="v" VALUE="0" />
+                <D VAR="T" VALUE="0" />
+                <N VAR="p" USERDEFINEDTYPE="H" VALUE="0" />
+            </REGION>
+        </BOUNDARYCONDITIONS>
+        <FUNCTION NAME="InitialConditions">
+            <E VAR="u" VALUE="0" />
+            <E VAR="v" VALUE="0" />
+            <E VAR="T" VALUE="1-x" />
+            <E VAR="p" VALUE="0" />
+        </FUNCTION>
+        <FUNCTION NAME="BodyForce">
+            <E VAR="u" VALUE="0" EVARS="u v T p" />
+            <E VAR="v" VALUE="Ra*Pr*T" EVARS="u v T p" />
+            <E VAR="T" VALUE="0" EVARS="u v T p"  />
+        </FUNCTION>
+
+        <FUNCTION NAME="DiffusionCoefficient">
+            <E VAR="T" VALUE="${DiffusionCoefficient}" />
+        </FUNCTION>
+    </CONDITIONS>
+    <FORCING>
+        <FORCE TYPE="Body">
+            <BODYFORCE> BodyForce </BODYFORCE>
+        </FORCE>
+    </FORCING>
+    <FILTERS>
+       <FILTER TYPE="AeroForces">
+            <PARAM NAME="OutputFile"> NusseltTest1L </PARAM>
+            <PARAM NAME="OutputFrequency"> 10        </PARAM>
+            <PARAM NAME="Boundary"> B[2]              </PARAM>
+        </FILTER>
+        <FILTER TYPE="AeroForces">
+            <PARAM NAME="OutputFile"> NusseltTest1R </PARAM>
+            <PARAM NAME="OutputFrequency"> 10        </PARAM>
+            <PARAM NAME="Boundary"> B[3]              </PARAM>
+        </FILTER>
+        <FILTER TYPE="HistoryPoints">
+            <PARAM NAME="OutputFile"> PointTest </PARAM>
+            <PARAM NAME="OutputFrequency"> 10      </PARAM>
+            <PARAM NAME="Points"> 0.5 1.0 0.0   </PARAM>
+        </FILTER>
+	    <FILTER TYPE="AverageFields">
+    	    <PARAM NAME="OutputFile"> AveragedTest </PARAM>
+            <PARAM NAME="SampleFrequency"> 10 </PARAM>
+	    </FILTER>
+    </FILTERS>
+</NEKTAR>
+

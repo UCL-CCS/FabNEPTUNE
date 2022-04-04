@@ -1,0 +1,19 @@
+
+cd $job_results
+$run_prefix
+
+/usr/bin/env > env.log
+
+start_time="$(date -u +%s.%n)"
+echo "Start $convection_2d_exec program..."
+start_time="$(date -u +%s.%n)"
+echo "input xml file name:  $convection_2d_input"
+
+# executing easyvvuq sampler
+python3 --version
+which python3
+/home/kevin/anaconda3/envs/py38/bin/python3.8   convection_2d_easyvvuq_init_run_analyse_local.py     $machine_name    '$run_command'   $convection_2d_exec
+
+end_time="$(date -u +%s.%n)"
+elapsed="$(bc <<<"$end_time-$start_time")"
+echo -e "\n\nTotal Executing Time = $elapsed seconds\n" > time.txt
