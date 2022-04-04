@@ -10,8 +10,10 @@ These examples assume that you have been able to run the basic FabSim examples d
 Two minimal examples of  Convection2D and Convection3D simulation are provided in ``config_files/SCEMa_test1`` and  ``config_files/convection_2d_test`` and ``config_files/convection_3d_test`` to execute these examples type:
 
 ``fabsim localhost Convection2D_local:convection_2d_test``
+``fabsim <remote machine name> Convection2D_remote:convection_2d_test``
 
 ``fabsim localhost Convection3D_local:convection_3d_test``
+``fabsim <remote machine name> Convection3D_remote:convection_3d_test``
 
 # Run Ensemble Examples
 
@@ -22,6 +24,7 @@ These examples assume that you have been able to run the basic FabSim examples d
 To run type:
 ```
 fabsim localhost Convection2D_ensemble_local:Convection2D_ensemble_example
+fabsim <remote machine name> Convection2D_ensemble_remote:Convection2D_ensemble_example
 ```
 This example runs 3 simulations with different input files, which vary the simulation timestep, using the same topology file.
 
@@ -33,6 +36,7 @@ This example runs 3 simulations with different input files, which vary the simul
 To run type:
 ```
 fabsim localhost  Convection3D_ensemble_local:Convection3D_ensemble_example
+fabsim <remote machine name>  Convection3D_ensemble_remote:Convection3D_ensemble_example
 ```
 ## EasyVVUQ+FabNEPTUNE
 After updating the following files with your credentials
