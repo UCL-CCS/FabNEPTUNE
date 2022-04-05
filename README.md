@@ -53,6 +53,8 @@ run the following:
 ```
   -  fabsim   localhost   Convection2D_init_run_analyse_campaign_local:convection_2d_easyvvuq_InRuAn1_QCGPJ
   -  fabsim   <remote machine name>   Convection2D_init_run_analyse_campaign_remote:convection_2d_easyvvuq_InRuAn1_QCGPJ
+  -  fabsim   localhost   Convection2D_init_run_analyse_campaign_local:convection_2d_easyvvuq_InRuAn2_QCGPJ
+  -  fabsim   <remote machine name>   Convection2D_init_run_analyse_campaign_remote:convection_2d_easyvvuq_InRuAn2_QCGPJ
 
 ```
 
@@ -62,4 +64,28 @@ and copy the results back to your local machine with
  -  fabsim  localhost   fetch_results
  -  fabsim  <remote machine name>   fetch_results
 ```
+## EasyVVUQ+EasySurrogate+FabNEPTUNE 
+After updating the following files with your credentials
 
+```
+  -FabSim3/deploy/machines_user.yml
+  -FabSim3/deploy/machines.yml
+  -FabSim3/plugins/FabSCEMa/machines_FabNEPTUNE_user.yml
+  
+```
+
+run the following:
+
+```
+  -  fabsim   localhost   Convection2D_init_run_analyse_campaign_local:convection_2d_easyvvuq_easysurrogate_InRuAn1_DAS_QCGPJ
+  -  fabsim   <remote machine name>   Convection2D_init_run_analyse_campaign_remotel:convection_2d_easyvvuq_easysurrogate_InRuAn1_DAS_QCGPJ
+  -  fabsim   localhost   Convection2D_init_run_analyse_campaign_local:convection_2d_easyvvuq_easysurrogate_InRuAn2_DAS_QCGPJ
+  -  fabsim   <remote machine name>   Convection2D_init_run_analyse_campaign_remote:convection_2d_easyvvuq_easysurrogate_InRuAn2_DAS_QCGPJ
+
+```
+
+and as always copy the results back to your local machine with
+
+```
+ -  fabsim  localhost   fetch_results
+ -  fabsim  <remote machine name>   fetch_results
