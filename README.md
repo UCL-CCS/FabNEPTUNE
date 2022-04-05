@@ -1,6 +1,6 @@
 # FabNEPTUNE
 <br>
- <img height="310" src="logo.png"/>
+ <img height="200" src="logo.png"/>
 </br>
 
 # How to run a Convection2D and Convection3D (test) Jobs
