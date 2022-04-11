@@ -15,7 +15,7 @@ An example of workflow form implemented FabNEPTUNE's projects will be explained 
 
 Convection2d and convection3d
 -----------------------------
-These Nektar++ session files represent a model consisting of a fluid-filled tank with the rough proportions of a cereal packet. Vertical natural convection is triggered by maintaining a constant temperature difference across the space between the two largest faces. This geometry represents experimental apparatus being used at the University of Leeds by a current student of Wayne (Arter) and designed to reproduce and go beyond classic experiments by Elder [1].
+These Nektar++ session files represent a model consisting of a fluid-filled tank with the rough proportions of a cereal packet. Vertical natural convection is triggered by maintaining a constant temperature difference across the space between the two largest faces. This geometry represents experimental apparatus being used at the University of Leeds and designed to reproduce and go beyond classic experiments by Elder [1].
 Two examples are provided - a 3D one, with a large mesh containing 189,000 cuboidal finite elements (this has 189, 000 × (p + 1)3 degrees of freedom, where p is the order of the finite elements and takes the values 2, 3, 4, ... in Nektar++; this means a minimum of 1.5M dofs in the simulation), and a 2D ‘toy’ mesh (3375 quadrilateral finite elements - the relevant cross-section of the 3D case) which can be used for familiarization (suitable for running on single PC). In both cases, there is a file with the solver parameters (e.g. convection 2d.xml) and another file containing the relevant mesh (e.g. convection 2d mesh.xml). 
 The meshes can be uncompressed using the command:
 
