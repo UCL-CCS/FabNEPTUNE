@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to FabMD's documentation!
+Welcome to FabNEPTUNE's documentation!
 =================================
 
 FabNEPTUNE is a `FabSim3 <https://github.com/djgroen/FabSim3>`_ plugin for automated `NEPTUNE`_-based simulations.
