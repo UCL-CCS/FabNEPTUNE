@@ -15,14 +15,9 @@ An example of workflow form implemented FabNEPTUNE's projects will be explained 
 
 Convection2d and convection3d
 -----------------------------
-.. image:: https://github.com/UCL-CCS/FabNEPTUNE/tree/main/images/Convection_Nektar_for_UQ-1.png
-  :width: 400
-  
-  
-.. image:: https://github.com/UCL-CCS/FabNEPTUNE/tree/main/images/Convection_Nektar_for_UQ-2.png
-  :width: 400
-   
-
+.. figure:: https://github.com/UCL-CCS/FabNEPTUNE/tree/main/images/Convection_Nektar_for_UQ-1.png
+    
+    
 Submitting convection2d and convection3d jobs
 ------------------------------------------------------------------
 
