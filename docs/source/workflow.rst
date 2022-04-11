@@ -17,11 +17,11 @@ Convection2d and convection3d
 -----------------------------
 .. image:: https://github.com/UCL-CCS/FabNEPTUNE/tree/main/images/Convection_Nektar_for_UQ-1.png
   :width: 400
-  :alt: Alternative text
+  
   
 .. image:: https://github.com/UCL-CCS/FabNEPTUNE/tree/main/images/Convection_Nektar_for_UQ-2.png
   :width: 400
-  :alt: Alternative text  
+   
 
 Submitting convection2d and convection3d jobs
 ------------------------------------------------------------------
