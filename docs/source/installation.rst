@@ -18,7 +18,7 @@ Before run NEPTUNE (assume that you have been able to run the basic FabSim examp
 
 * To install FabSim3 tool, please follow the installation from https://fabsim3.readthedocs.io/en/latest/installation.html
 
-* To install FabMD plugin, simple type:
+* To install FabNEPTUNE plugin, simple type:
 
     .. code-block:: console
 		
