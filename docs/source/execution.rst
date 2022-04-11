@@ -52,20 +52,18 @@ FabNEPTUNE looks for a directory called ``Convection3D_ensemble_example`` in ``c
 		
 
 EasyVVUQ+FabNEPTUNE
-========================
+===================
 
 These examples assume that you have been able to run the basic FabSim examples described in the other documentation files, and that you have built and configured Nektar++ (https://www.nektar.info/) on the target machine.
 
-.. Note:: All the easyvvuq campaign infantilization, runs execution, and the results analyse will be done on target machine which can be your localhost or remote HPC machine.
+.. Note:: All the easyvvuq campaign runs and  execution, and the results analyse will be done on target machine which can be your localhost or remote HPC machine.
 
-Its a very simple example of a Convection2D
-
-The input files needed for this example are found in ``plugins/FabMD/config_files/fabmd_easyvvuq_test1``. This directory contains three files:
+The input files needed for this example are found in ``plugins/FabNEPTUNE/config_files/convection_2d_easyvvuq_InRuAn*_QCGPJ``. This directory contains the following files that can be modified for your own purpose:
 
 
-* ``convection_2d_remote.template``: is the convection2d input script in ``sampler_inputs`` subfolder, EasyVVUQ will substitute certain variables in this file to create the ensemble.
+* ``convection_2d_remote.template``: is the convection2d input script in ``convection_2d_easyvvuq_InRuAn*_QCGPJ`` subfolder, EasyVVUQ will substitute certain variables in this file to create the ensemble.
 
-* ``campaign_params_remote.yml``: is the configuration file, in ``sampler_inputs`` subfolder, for EasyVVUQ sampler. If you need different sampler, parameter to be varied, or polynomial order, you can set them in this file.
+* ``campaign_params_remote.yml``: is the configuration file, in ``convection_2d_easyvvuq_InRuAn*_QCGPJ`` subfolder, for EasyVVUQ sampler. If you need different sampler, parameter to be varied, or polynomial order, you can set them in this file.
 
 Execution
 ---------
@@ -85,4 +83,58 @@ To run type:
 		
                fabsim   localhost   Convection2D_init_run_analyse_campaign_local:convection_2d_easyvvuq_InRuAn*_QCGPJ
                fabsim   <remote machine name>   Convection2D_init_run_analyse_campaign_remote:convection_2d_easyvvuq_InRuAn*_QCGPJ
+	       
+To copy the results back to your local machine type:
+
+    .. code-block:: console	       
+	       
+	       fabsim  localhost   fetch_results
+	       fabsim  <remote machine name>   fetch_results
+	       
+	      
+EasyVVUQ+EasySurrogate+FabNEPTUNE
+=================================
+
+These examples assume that you have been able to run the basic FabSim examples described in the other documentation files, and that you have built and configured Nektar++ (https://www.nektar.info/) on the target machine.
+
+.. Note:: All the EasyVVUQ and EasySurrogate campaigns runs and execution, and the results analyse will be done on target machine which can be your localhost or remote HPC machine.
+
+Its a very simple example of a Convection2D
+
+The input files needed for this example are found in ``plugins/FabNEPTUNE/config_files/convection_2d_easyvvuq_easysurrogate_InRuAn*_DAS_QCGPJ``. This directory contains the following files that can be modified for your own purpose:
+
+
+* ``convection_2d_remote.template``: is the convection2d input script in ``convection_2d_easyvvuq_easysurrogate_InRuAn*_DAS_QCGPJ`` subfolder, EasyVVUQ will substitute certain variables in this file to create the ensemble.
+
+* ``campaign_params_remote.yml``: is the configuration file, in ``convection_2d_easyvvuq_easysurrogate_InRuAn*_DAS_QCGPJ`` subfolder, for EasyVVUQ sampler. If you need different sampler, parameter to be varied, or polynomial order, you can set them in this file.
+
+Execution
+---------
+After updating the following files with your credentials
+
+    .. code-block:: console
+		
+		FabSim3/deploy/machines_user.yml
+		FabSim3/deploy/machines.yml
+		FabSim3/plugins/FabNEPTUNE/machines_FabNEPTUNE_user.yml
+
+``<remote machine>`` can be your ``localhost`` or a HPC resources.
+
+To run type:
+
+    .. code-block:: console
+		
+               fabsim   localhost   Convection2D_init_run_analyse_campaign_local:convection_2d_easyvvuq_easysurrogate_InRuAn1_DAS_QCGPJ
+               fabsim   <remote machine name>   Convection2D_init_run_analyse_campaign_remotel:convection_2d_easyvvuq_easysurrogate_InRuAn1_DAS_QCGPJ
+	       fabsim   localhost   Convection2D_init_run_analyse_campaign_local:convection_2d_easyvvuq_easysurrogate_InRuAn2_DAS_QCGPJ
+	       fabsim   <remote machine name>   Convection2D_init_run_analyse_campaign_remote:convection_2d_easyvvuq_easysurrogate_InRuAn2_DAS_QCGPJ
+	       
+To copy the results back to your local machine type:
+
+    .. code-block:: console	       
+	       
+	       fabsim  localhost   fetch_results
+	       fabsim  <remote machine name>   fetch_results
+	       
+
 
