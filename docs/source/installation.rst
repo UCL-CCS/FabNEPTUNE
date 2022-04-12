@@ -9,7 +9,7 @@ Nektar++ configuration and build
 In the following we will provide an example on how to configure and build Nektar++ on a remote machine.
 Nektar++ on ARCHER2
 ===================
-.. image:: ../../images/Nkk.png
+.. image:: ./images/Nkk.png
    :alt: some image
    :target: https://www.nektar.info/
    :class: with-shadow
