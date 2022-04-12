@@ -11,7 +11,7 @@ FabNEPTUNE is a tool that allows for the easy execution of NEPTUNE project simul
 
 Example of workflow for FabNEPTUNE (convection2d and convection3d)
 ------------------------------------------------------------------
-An example of workflow form implemented FabNEPTUNE's projects will be explained in the following 
+An already implemented example from FabNEPTUNE's projects will be explained in the following 
 
 Convection2d and convection3d
 -----------------------------
