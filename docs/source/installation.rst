@@ -9,8 +9,8 @@ Nektar++ configuration and build
 In the following we will provide an example on how to configure and build Nektar++ on a remote machine.
 Nektar++ on ARCHER2
 ===================
-.. image:: https://github.com/UCL-CCS/FabNEPTUNE/images/Nkk.png
-   :alt: some image
+.. image:: https://github.com/UCL-CCS/FabNEPTUNE/tree/main/images/Nkk.png
+   :alt: Nektar++
    :target: https://www.nektar.info/
    :class: with-shadow
    :scale: 50
@@ -67,7 +67,7 @@ For more detailed approach visit:
 FabNEPTUNE Installation
 ==================
 .. image:: ../../logo.png
-   :alt: some image
+   :alt: FabNEPTUNE
    :target: https://github.com/UCL-CCS/FabNEPTUNE
    :class: with-shadow
    :scale: 100
