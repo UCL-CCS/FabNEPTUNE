@@ -11,7 +11,7 @@ FabNEPTUNE is a `FabSim3 <https://github.com/djgroen/FabSim3>`_ plugin for autom
 This plugin provides functionality to extend FabSim3’s workflow and remote submission capabilities to NEPTUNE specific tasks.
 
 .. toctree::
-   :caption: Installation
+   :caption: Installation and build
    :maxdepth: 1
 
    installation
