@@ -74,7 +74,7 @@ FabNEPTUNE Installation
    :alt: FabNEPTUNE
    :target: https://github.com/UCL-CCS/FabNEPTUNE
    :class: with-shadow
-   :scale: 100
+   :scale: 60
 
 Before run NEPTUNE [assume that you have been able to run the basic FabSim examples described in the other documentation files, and that you have configured and built Nektar++ (https://www.nektar.info/) on the target machine, and  successfully tested the executable code!], you should install FabNEPTUNE which provides functionality to extend FabSim3's workflow and remote submission capabilities to NEPTUNE specific tasks. 
 
