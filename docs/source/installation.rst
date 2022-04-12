@@ -7,12 +7,11 @@ Nektar++ configuration and build
 ===================
 
 In the following we will provide an example on how to configure and build Nektar++ on a remote machine.
-
 Nektar++ on ARCHER2
 ===================
-.. image:: ../../logo.png
+.. image:: ../images/Nkk.png
    :alt: some image
-   :target: https://typo3.org
+   :target: https://www.nektar.info/
    :class: with-shadow
    :scale: 50
 
@@ -67,6 +66,11 @@ For more detailed approach visit:
 
 FabNEPTUNE Installation
 ==================
+.. image:: ../../logo.png
+   :alt: some image
+   :target: https://github.com/UCL-CCS/FabNEPTUNE
+   :class: with-shadow
+   :scale: 100
 
 Before run NEPTUNE [assume that you have been able to run the basic FabSim examples described in the other documentation files, and that you have configured and built Nektar++ (https://www.nektar.info/) on the target machine, and  successfully tested the executable code!], you should install FabNEPTUNE which provides functionality to extend FabSim3's workflow and remote submission capabilities to NEPTUNE specific tasks. 
 
