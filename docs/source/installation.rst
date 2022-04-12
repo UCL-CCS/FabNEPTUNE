@@ -53,7 +53,7 @@ At this point you can run ccmake .. to e.g. disable unnecessary solvers. Now run
 		
 		make -j 4 install
 
-For more details approach visit:
+For more detailed approach visit:
     .. code-block:: console
 		
 		https://www.nektar.info/nektar-on-archer2/
