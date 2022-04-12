@@ -21,10 +21,14 @@ First load the following modules:
 		module load cmake
 
 
-Enter the work directory and clone the Nektar++ code into a folder, e.g. nektarpp
+Enter the work directory (/work) and clone the Nektar++ code into a folder, e.g. nektarpp
 
-cd /work/e01/e01/mlahooti
-git clone https://gitlab.nektar.info/nektar/nektar.git nektarpp
+    .. code-block:: console
+		
+		cd /work/e01/e01/mlahooti
+                git clone https://gitlab.nektar.info/nektar/nektar.git nektarpp 
+
+
 After the code is cloned, enter the nektarpp folder, make a build directory and enter it
     .. code-block:: console
 		
@@ -42,7 +46,7 @@ From within the build directory, run the configure command. Note the use of CC a
 cc and CC are the C and C++ wrappers for the Cray utilities and determined by the PrgEnv module.
 SYSTEM_BLAS_LAPACK is disabled since, by default, we can use the libsci package which contains an optimized version of BLAS and LAPACK and not require any additional arguments to cc.
 HDF5 is a better output option to use on ARCHER2 since often we run out of the number of files limit on the quota. Setting this option from within ccmake has led to problems however so make sure to specify it on the cmake command line as above. Further, the HDF5 version on the ARCHER2 is not supported at the moment, so here it is built as a third-party library.
-We are currently not using the system boost since it does not appear to be using C++11 and so causing compilation errors.
+They are currently not using the system boost since it does not appear to be using C++11 and so causing compilation errors.
 At this point you can run ccmake .. to e.g. disable unnecessary solvers. Now run make as usual to compile the code
 
     .. code-block:: console
