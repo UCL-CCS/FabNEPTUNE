@@ -10,6 +10,12 @@ In the following we will provide an example on how to configure and build Nektar
 
 Nektar++ on ARCHER2
 ===================
+.. image:: ../../logo.png
+   :alt: some image
+   :target: https://typo3.org
+   :class: with-shadow
+   :scale: 50
+
 
 First load the following modules:
 
