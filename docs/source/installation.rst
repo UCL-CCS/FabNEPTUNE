@@ -14,7 +14,7 @@ Nektar++ on ARCHER2
    :alt: Nektar++
    :target: https://www.nektar.info/
    :class: with-shadow
-   :scale: 10
+   :scale: 30
 
 
 First load the following modules:
