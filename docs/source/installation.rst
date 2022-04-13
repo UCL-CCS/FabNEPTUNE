@@ -245,6 +245,8 @@ For more detailed approach please visit:
 creating virtual environment
 ==================
 
+finally Next you need to create new virtual environment.
+
 You can install virtualenv using:
     .. code-block:: console
 		
