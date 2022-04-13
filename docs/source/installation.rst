@@ -123,7 +123,7 @@ For example:
 		
 Installing EasyVVUQ
 ==================
-.. image:: ../images/esvvq.png
+.. image:: ../../images/esvvq.png
    :alt: EasyVVUQ
    :target: https://easyvvuq.readthedocs.io/en/dev/
    :class: with-shadow
