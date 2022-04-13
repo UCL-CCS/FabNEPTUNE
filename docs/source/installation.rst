@@ -127,7 +127,7 @@ Installing EasyVVUQ
    :alt: EasyVVUQ
    :target: https://easyvvuq.readthedocs.io/en/dev/
    :class: with-shadow
-   :scale: 25		
+   :scale: 20		
 		
 Next you need to install EasyVVUQ in your Miniconda environment to access it.
 You can install EasyVVUQ using:
