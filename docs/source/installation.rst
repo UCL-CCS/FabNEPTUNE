@@ -100,7 +100,7 @@ Installing Miniconda
    :alt: Miniconda
    :target: https://docs.conda.io/en/latest/miniconda.html
    :class: with-shadow
-   :scale: 60
+   :scale: 30
 
 First, you should download Miniconda (links to the various miniconda versions on the Miniconda website: https://docs.conda.io/en/latest/miniconda.html)
 
