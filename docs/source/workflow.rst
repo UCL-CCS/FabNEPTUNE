@@ -42,10 +42,11 @@ One possible pitfall is that the explicit part of the time-stepping means that t
 Increasing Ra means that the simulation has finer features (e.g. thinner boundary layers) and needs more accuracy. Increasing the precision is done by increasing the integer spectral order p which is represented by the parameter NUMMODES in the session file. Note NUMMODES is equivalent to p+1. Note increasing p increases the number of degrees of freedom and hence the computational demand imposed by the simulation.
 
 .. image:: ../../images/conv.png
+   :align: center
    :alt: Miniconda
    :target: https://docs.conda.io/en/latest/miniconda.html
    :class: with-shadow
-   :scale: 30
+   :scale: 50
 
 Outputs - Nektar++ filters can be used to produce simulation output as time series (uncomment lines relat- ing to the desired filter in convection 2d.xml to use). In particular, the Nusselt number can be calculated using the built-in AeroForces filter if a small modification is made to one file (FilterAeroForces.cpp) in the code before compilation. A copy of the modified file with modifications for 2D and 3D (either-or, must alter file before compilation to choose which) meshes is included (see code marked TRIALCODE in the file, plus attendant comments); if using this, a good test is to ensure a Nusselt number of approx. unity can be obtained from the simulation in the small Rayleigh number limit (you will need to normalize to the appropriate area). Note the relevant number is the F1-press column of the generated output file. Other filters can calculate fields at a point if desired, se e.g. HistoryPoints.
 
