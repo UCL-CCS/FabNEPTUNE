@@ -62,7 +62,7 @@ At this point you can run ccmake .. to e.g. disable unnecessary solvers. Now run
 		
 		make -j 4 install
 
-For more detailed approach visit:
+For more detailed approach please visit:
     .. code-block:: console
 		
 		https://www.nektar.info/nektar-on-archer2/
@@ -76,7 +76,7 @@ FabNEPTUNE Installation
    :class: with-shadow
    :scale: 60
 
-Before run NEPTUNE [assume that you have been able to run the basic FabSim examples described in the other documentation files, and that you have configured and built Nektar++ (https://www.nektar.info/) on the target machine, and  successfully tested the executable code!], you should install FabNEPTUNE which provides functionality to extend FabSim3's workflow and remote submission capabilities to NEPTUNE specific tasks. 
+Before run FabNEPTUNE [assume that you have been able to run the basic FabSim examples described in the other documentation files, and that you have configured and built Nektar++ (https://www.nektar.info/) on the target machine, and  successfully tested the executable code!], you should install FabNEPTUNE which provides functionality to extend FabSim3's workflow and remote submission capabilities to NEPTUNE specific tasks. 
 
 * To install FabSim3 tool, please follow the installation from https://fabsim3.readthedocs.io/en/latest/installation.html
 
@@ -84,4 +84,24 @@ Before run NEPTUNE [assume that you have been able to run the basic FabSim examp
 
     .. code-block:: console
 		
-		fabsim localhost install_plugin:FabNEPTUNE	
+		fabsim localhost install_plugin:FabNEPTUNE
+		
+		
+After installation of FabNEPTUNE the following need to be also done.
+Custom Environments 
+==================
+Regardless of the exsisting python environment on the HPC/local system, you can setup a custom Python environment including packages that are not in the central installation, the simplest approach would be the installation of Miniconda locally in your own directories.
+
+Installing Miniconda
+==================
+.. image:: ../../ac.png
+   :alt: Miniconda
+   :target: https://docs.conda.io/en/latest/miniconda.html
+   :class: with-shadow
+   :scale: 60
+
+First, you should download Miniconda (links to the various miniconda versions on the Miniconda website: https://docs.conda.io/en/latest/miniconda.html)
+
+Note: If you wish to use Python on the Archer2's compute nodes then you must install Miniconda in your /work directories as these are the only ones visible on the compute nodes.
+
+Once you have downloaded the installer, you can run it. For example:
