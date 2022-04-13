@@ -118,5 +118,5 @@ After you have installed Miniconda and setup your environment to access it, you 
 For example: 
     .. code-block:: console
 		
-		user@login*:~> conda install somepy
+		(base)user@login*:~> conda install somepy
 		
