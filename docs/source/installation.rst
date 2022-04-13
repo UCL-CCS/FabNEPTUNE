@@ -242,10 +242,10 @@ For more detailed approach please visit:
 		https://github.com/vecma-project/QCG-PilotJob
 
 
-creating virtual environment
+Creating virtual environment
 ==================
 
-finally Next you need to create new virtual environment.
+Finally you need to create a new virtual environment, and update 
 
 You can install virtualenv using:
     .. code-block:: console
