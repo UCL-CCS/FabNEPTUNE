@@ -146,3 +146,19 @@ For more detailed approach please visit:
 		https://github.com/UCL-CCS/EasyVVUQ
 
 
+Installing EasySurrogate
+==================		
+		
+Next you need to install EasySurrogate in your Miniconda environment to access it.
+You can install EasyVVUQ using:
+    .. code-block:: console
+		
+		(base)user@login*:~> pip install easysurrogate
+
+For more detailed approach please visit:
+    .. code-block:: console
+		
+		https://github.com/wedeling/EasySurrogate
+		
+		
+
