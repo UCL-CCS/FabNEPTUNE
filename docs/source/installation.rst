@@ -140,7 +140,7 @@ and upgrade the library using:
 		
 		(base)user@login*:~> pip install easyvvuq --upgrade
 
-Where base can be replaced with your own conda environment
+Where (base) can be replaced with your new conda environment
 
 For more detailed approach please visit:
     .. code-block:: console
@@ -157,6 +157,8 @@ You can install EasyVVUQ using:
 		
 		(base)user@login*:~> pip install easysurrogate
 
+Where (base) can be replaced with your new conda environment
+
 For more detailed approach please visit:
     .. code-block:: console
 		
@@ -171,7 +173,7 @@ Installing FabSim3
    :class: with-shadow
    :scale: 25
 
-Next, you need to install FabSim3 somewhere in your directories  and your Miniconda environment to access it.
+Next you need to install FabSim3 somewhere in your directories and your Miniconda environment to access it.
 
 First you need to check if the following Python modules are already installed
 
@@ -202,7 +204,75 @@ Finally change to your FabSim3 directory, and type
 		
 		(base)user@login*:~>python3 configure_fabsim.py
 
+Where (base) can be replaced with your new conda environment
+
 For more detailed approach please visit:
     .. code-block:: console
 		
 		https://github.com/djgroen/FabSim3
+
+
+Installing QCG-PilotJob
+==================
+.. image:: ../../images/qcg-pj-logo.png
+   :alt: QCG-PilotJob
+   :target: https://qcg-pilotjob.readthedocs.io/en/develop/
+   :class: with-shadow
+   :scale: 25
+
+Next you need to install QCG-PilotJob somewhere in your Miniconda environment to access it.
+
+You can install QCG-PilotJob using:
+    .. code-block:: console
+		
+		(base)user@login*:~> pip install qcg-pilotjob
+
+and supplementary packages can be installed using:
+    .. code-block:: console
+		
+		(base)user@login*:~> pip install qcg-pilotjob-cmds
+		(base)user@login*:~> pip install qcg-pilotjob-executor-api
+
+Where (base) can be replaced with your new conda environment
+
+
+For more detailed approach please visit:
+    .. code-block:: console
+		
+		https://github.com/vecma-project/QCG-PilotJob
+
+
+creating virtual environment
+==================
+
+You can install virtualenv using:
+    .. code-block:: console
+		
+		curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+                python3 get-pip.py --user
+                pip install --user virtualenv
+		
+		
+then to create private virtual environment type:
+    .. code-block:: console
+		
+		virtualenv venv
+                . venv/bin/activate	
+		
+Once you have installed the required packages, then install QCG-PilotJob using:
+
+    .. code-block:: console
+		
+		pip install qcg-pilotjob
+
+and supplementary packages can be installed using:
+    .. code-block:: console
+		
+		pip install qcg-pilotjob-cmds
+		pip install qcg-pilotjob-executor-api
+
+		
+For more detailed approach please visit:
+    .. code-block:: console
+		
+		https://qcg-pilotjob.readthedocs.io/en/develop/installation.html
