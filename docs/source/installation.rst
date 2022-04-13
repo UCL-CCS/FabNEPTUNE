@@ -245,7 +245,17 @@ For more detailed approach please visit:
 Creating virtual environment
 ==================
 
-Finally you need to create a new virtual environment, and update 
+Finally you need to create a new virtual environment, and update the following files:
+
+    .. code-block:: console
+		
+		easyvvuq_convection_2d_RUN_localhost.py
+                easyvvuq_convection_2d_RUN_remote.py
+
+
+which  are found in ``plugins/FabNEPTUNE/config_files/convection_2d_easyvvuq_InRuAn*_QCGPJ`` and ``plugins/FabNEPTUNE/config_files/convection_2d_easyvvuq_easysurrogate_InRuAn*_DAS_QCGPJ``
+
+This environment is used by EasyVVUQ campaign. 
 
 You can install virtualenv using:
     .. code-block:: console
@@ -255,13 +265,13 @@ You can install virtualenv using:
                 pip install --user virtualenv
 		
 		
-then to create private virtual environment type:
+Then to create private virtual environment type:
     .. code-block:: console
 		
 		virtualenv venv
                 . venv/bin/activate	
 		
-Once you have installed the required packages, then install QCG-PilotJob using:
+Once you have installed the required packages and created virtual environment, then install QCG-PilotJob using:
 
     .. code-block:: console
 		
