@@ -129,3 +129,4 @@ Installing EasyVVUQ
    :class: with-shadow
    :scale: 40		
 		
+Next you need to install EasyVVUQ in your Miniconda environment to access it
