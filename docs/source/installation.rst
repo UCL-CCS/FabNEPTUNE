@@ -140,6 +140,8 @@ and upgrade the library using:
 		
 		(base)user@login*:~> pip install easyvvuq --upgrade
 
+Where base can be replaced with your own conda environment
+
 For more detailed approach please visit:
     .. code-block:: console
 		
@@ -161,4 +163,46 @@ For more detailed approach please visit:
 		https://github.com/wedeling/EasySurrogate
 		
 		
+Installing FabSim3
+==================
+.. image:: ../../images/fbs.png
+   :alt: FabSim3
+   :target: https://fabsim3.readthedocs.io/en/latest/
+   :class: with-shadow
+   :scale: 25
 
+Next, you need to install FabSim3 somewhere in your directories  and your Miniconda environment to access it.
+
+First you need to check if the following Python modules are already installed
+
+    .. code-block:: console
+		
+		fabric3==1.13.1.post1
+		PyYAML
+		numpy
+		ruamel.yaml
+		rich
+
+Then install both ruamel.yaml and rich package
+
+    .. code-block:: console
+		
+		pip3 install ruamel.yaml rich
+
+
+Once you have installed the required packages, then clone FabSim3 from the GitHub repository:
+
+    .. code-block:: console
+		
+		git clone https://github.com/djgroen/FabSim3.git
+		
+Finally change to your FabSim3 directory, and type		
+
+    .. code-block:: console
+		
+		(base)user@login*:~>python3 configure_fabsim.py
+
+For more detailed approach please visit:
+    .. code-block:: console
+		
+		https://github.com/djgroen/FabSim3
