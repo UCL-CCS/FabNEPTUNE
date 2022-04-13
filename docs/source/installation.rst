@@ -127,5 +127,5 @@ Installing EasyVVUQ
    :alt: EasyVVUQ
    :target: https://easyvvuq.readthedocs.io/en/dev/
    :class: with-shadow
-   :scale: 60		
+   :scale: 20		
 		
