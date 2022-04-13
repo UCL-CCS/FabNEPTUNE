@@ -129,4 +129,20 @@ Installing EasyVVUQ
    :class: with-shadow
    :scale: 25		
 		
-Next you need to install EasyVVUQ in your Miniconda environment to access it
+Next you need to install EasyVVUQ in your Miniconda environment to access it.
+You can install EasyVVUQ using:
+    .. code-block:: console
+		
+		(base)user@login*:~> pip install easyvvuq
+
+and upgrade the library using:
+    .. code-block:: console
+		
+		(base)user@login*:~> pip install easyvvuq --upgrade
+
+For more detailed approach please visit:
+    .. code-block:: console
+		
+		https://github.com/UCL-CCS/EasyVVUQ
+
+
