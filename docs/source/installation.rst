@@ -13,7 +13,7 @@ Nektar++ on ARCHER2
 ===================
 
 
-.. image:: ../../Nkk.png
+.. image:: ../../images/Nkk.png
    :alt: Nektar++
    :target: https://www.nektar.info/
    :class: with-shadow
@@ -96,7 +96,7 @@ Regardless of the existing python environment on the HPC/local system, you need 
 
 Installing Miniconda
 ==================
-.. image:: ../../ac.png
+.. image:: ../../images/ac.png
    :alt: Miniconda
    :target: https://docs.conda.io/en/latest/miniconda.html
    :class: with-shadow
@@ -127,5 +127,5 @@ Installing EasyVVUQ
    :alt: EasyVVUQ
    :target: https://easyvvuq.readthedocs.io/en/dev/
    :class: with-shadow
-   :scale: 10		
+   :scale: 40		
 		
