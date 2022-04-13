@@ -120,3 +120,12 @@ For example:
 		
 		(base)user@login*:~> conda install somepy
 		
+		
+Installing EasyVVUQ
+==================
+.. image:: ../images/esvvq.png
+   :alt: EasyVVUQ
+   :target: https://easyvvuq.readthedocs.io/en/dev/
+   :class: with-shadow
+   :scale: 60		
+		
