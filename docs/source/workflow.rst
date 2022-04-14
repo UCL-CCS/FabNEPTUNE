@@ -105,7 +105,7 @@ In this file you can set the path to the convection2d/3d executable on the remot
 		   modules:
 		      loaded: ["python"]
 
-After all the above configurations, we still need to update ``FabSim3/fabsim/deploy/templates``. For example, the template (slurm-archer2) for archer2 remote machine might look like:
+After all the above configurations done we still would need to update ``FabSim3/fabsim/deploy/templates``. For example, the template (slurm-archer2) for archer2 remote machine might look like:
 
            .. code-block:: bash
 	   
