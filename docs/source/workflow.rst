@@ -59,7 +59,13 @@ References
 Submitting convection2d and convection3d jobs
 ------------------------------------------------------------------
 
-Before submitting the simulation to a remote machine, two YAML files must be edited. First we need to modify the file ``FabSim3/deploy/machines_user.yml`` and add the login credentials in the template so that FabNEPTUNE knows where to run the simulation. 
+Before submitting the simulation to a remote machine, two YAML files must be edited. First we need to modify the file
+
+      .. code-block:: yaml
+      
+           FabSim3/deploy/machines_user.yml 
+
+and add the login credentials in the template so that FabNEPTUNE knows where to run the simulation. 
 The following example shows what parameters (username, project, budget and sshpass) need to be defined for a remote machine name ARCHER2 (the UK National Supercomputer). Other machines may have more or less parameters that need to be defined.
 
 	.. code-block:: yaml
@@ -73,7 +79,13 @@ The following example shows what parameters (username, project, budget and sshpa
 
 
 
-The next important file that needs to be updated is ``FabSim3/plugins/FabNEPTUNE/machines_FabNEPTUNE_user.yml``. In this file you can set the path to the convection2d/3d executable on the remote machine which are Nektar++ executable and the input file names, and the remote run command. Here we assume that you have been able to run the basic FabSim examples described in the other documentation files, and that you have configured and built Nektar++ (https://www.nektar.info/) on the target machine, and successfully tested the executable code!. However, most HPC clusters could have Nektar++ available as a module and this can be added in the loaded modules section of the file. This means that the ``convection2d_exec`` parameter can be set to the path of the compiled executable. For example, archer2 remote machine might look like:
+The next important file that needs to be updated is 
+
+        .. code-block:: yaml
+	
+              FabSim3/plugins/FabNEPTUNE/machines_FabNEPTUNE_user.yml 
+
+In this file you can set the path to the convection2d/3d executable on the remote machine which are Nektar++ executable and the input file names, and the remote run command. Here we assume that you have been able to run the basic FabSim examples described in the other documentation files, and that you have configured and built Nektar++ (https://www.nektar.info/) on the target machine, and successfully tested the executable code!. However, most HPC clusters could have Nektar++ available as a module and this can be added in the loaded modules section of the file. This means that the ``convection2d_exec`` parameter can be set to the path of the compiled executable. For example, archer2 remote machine might look like:
 
 	.. code-block:: yaml
 
