@@ -63,6 +63,7 @@ Before submitting the simulation to a remote machine, two YAML files must be edi
 The following example shows what parameters (username, project, budget and sshpass) need to be defined for a remote machine name ARCHER2 (the UK National Supercomputer). Other machines may have more or less parameters that need to be defined.
 
 	.. code-block:: yaml
+	
                   archer2:		
                          username: "<your-username>"
                          project: "e123"
