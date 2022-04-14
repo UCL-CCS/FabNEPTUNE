@@ -148,7 +148,7 @@ Once all have been done, we can submit a simulation to a remote machine using th
 
     .. code-block:: console
 		
-		fabsim archer2 Convection2D_local:convection_2d_test	
+		fabsim archer2 Convection2D_remote:convection_2d_test	
 
 and copy the results back to our local machine with
 
