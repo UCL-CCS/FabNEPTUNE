@@ -97,6 +97,7 @@ However, most HPC clusters could have Nektar++ (https://www.nektar.info/) availa
 After all this configuration, we need to update ``FabSim3/fabsim/deploy/templates``. For example, the template (slurm-archer2) for archer2 remote machine might look like:
 
            .. code-block:: bash
+	   
 	         #!/bin/bash
                  ## slurm-archer2
                  ## number of nodes
