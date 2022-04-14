@@ -90,10 +90,9 @@ In this file you can set the path to the convection2d/3d executable on the remot
 	.. code-block:: yaml
 
 		archer2:
-		   convection2d_exec: ".../nektar++/build/dist/bin/IncNavierStokesSolver
+		   convection2d_exec: ".../nektar++/build/dist/bin/IncNavierStokesSolver"
 		   ...
 		   FabNEPTUNE_params:
-                         convection_input: "convection_Xd.xml"
                          convection_2d_input: "convection_2d.xml"
                          convection_3d_input: "convection_3d.xml"
                          sweep_dir_name: "SWEEP"
