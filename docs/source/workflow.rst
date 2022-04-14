@@ -59,25 +59,88 @@ References
 Submitting convection2d and convection3d jobs
 ------------------------------------------------------------------
 
-Before submitting the simulation to a remote machine, two YAML files must be edited. First we modify the file ``FabSim3/deploy/machines_user.yml`` and add our login credentials in the template so that FabNEPTUNE knows where to run the simulation. In this example we will use the PSNC HPC system called Eagle, so the only parameter we need to add is the ``username`` we use for that computer. Other computers may have have more parameters that need to be added, such as for example, the UK National Supercomputer ARCHER2, which also requires a password to be entered. 
+Before submitting the simulation to a remote machine, two YAML files must be edited. First we need to modify the file ``FabSim3/deploy/machines_user.yml`` and add the login credentials in the template so that FabNEPTUNE knows where to run the simulation. 
+The following example shows what parameters (username, project, budget and sshpass) need to be defined for a remote machine name ARCHER2 (the UK National Supercomputer). Other machines may have more or less parameters that need to be defined.
 
-The next file that needs to be updated is ``FabSim3/plugins/FabNEPTUNE/machines_FabNEPTUNE project_user.yml``. In this file you can set the path to the convection2d/3d executable on the remote machine which are Nektar++ executable. 
-However, most HPC clusters have Nektar++ (https://www.nektar.info/) available as a module and this can be added in the loaded modules section of the file. This means that the ``convection2d_exec`` parameter can be set to the convection command rather than the path of the compiled executable. For example, an arbitrary remote machine might look like:
+	.. code-block:: yaml
+                  archer2:		
+                         username: "<your-username>"
+                         project: "e123"
+                         budget: "e123-user"
+                         sshpass: "<ARCHER2-password>"
+                         manual_sshpass: true
+
+
+
+The next file that needs to be updated is ``FabSim3/plugins/FabNEPTUNE/machines_FabNEPTUNE_user.yml``. In this file you can set the path to the convection2d/3d executable on the remote machine which are Nektar++ executable and the input file names, and the remote run command. 
+However, most HPC clusters could have Nektar++ (https://www.nektar.info/) available as a module and this can be added in the loaded modules section of the file. This means that the ``convection2d_exec`` parameter can be set to the path of the compiled executable. For example, archer2 remote machine might look like:
 
 	.. code-block:: yaml
 
-		remote-machine-name:
-		   convection2d_exec: ".../nektar++/build/dist/bin/IncNavierStokesSolver"
+		archer2:
+		   convection2d_exec: ".../nektar++/build/dist/bin/IncNavierStokesSolver
+		   ...
+		   FabNEPTUNE_params:
+                         convection_input: "convection_Xd.xml"
+                         convection_2d_input: "convection_2d.xml"
+                         convection_3d_input: "convection_3d.xml"
+                         sweep_dir_name: "SWEEP"
+
+                   ...
+                   run_command_remote: "srun --nodes=1 --ntasks=1 --exclusive --oversubscribe --mem=25000M"
 		   ...
 		   ...
 		   ...
 		   modules:
 		      loaded: ["python"]
 
-After all this configuration, we can submit a simulation to a remote machine using the command:
+After all this configuration, we need to update ``FabSim3/fabsim/deploy/templates``. For example, the template (slurm-archer2) for archer2 remote machine might look like:
+
+           .. code-block:: bash
+	         #!/bin/bash
+                 ## slurm-archer2
+                 ## number of nodes
+                 #SBATCH --nodes 70
+
+                 ## SBATCH --nodes $nodes
+                 #SBATCH --ntasks=8960
+                 ## task per node
+                 #SBATCH --tasks-per-node=$corespernode
+                 #SBATCH --cpus-per-task=1
+                 ## wall time in format MINUTES:SECONDS
+                 #SBATCH --time=$job_wall_time
+
+
+                 ## grant
+                 #SBATCH --account=$budget
+
+                 ## stdout file
+                 #SBATCH --output=$job_results/JobID-%j.output
+
+                 ## stderr file
+                 #SBATCH --error=$job_results/JobID-%j.error
+
+                 #SBATCH --partition=$partition_name
+                 #SBATCH --qos=$qos_name
+
+                 export OMP_NUM_THREADS=1
+                 export FI_MR_CACHE_MAX_COUNT=0
+                 export PATH="/mnt/lustre/a2fs-work2/work/e723/e723/kevinb/miniconda3/bin:$PATH"
+                 export PATH="/mnt/lustre/a2fs-work2/work/e723/e723/kevinb/.local/.local/bin:$PATH"
+                 export NEK_DIR=/mnt/lustre/a2fs-work2/work/e723/e723/kevinb/nektarpp/build
+                 export NEK_BUILD=$NEK_DIR/dist/bin
+                 export LD_LIBRARY_PATH=/opt/gcc/10.2.0/snos/lib64:$NEK_DIR/ThirdParty/dist/lib:$NEK_DIR/dist/lib64:$LD_LIBRARY_PATH
+                 export PATH="/mnt/lustre/a2fs-work2/work/e723/e723/kevinb/nektarpp/build/dist/bin:$PATH"
+
+Once all have been done, we can submit a simulation to a remote machine using the command:
 
     .. code-block:: console
 		
 		fabsim archer2 Convection2D_local:convection_2d_test	
 
+and copy the results back to our local machine with
 
+    .. code-block:: console
+		
+		fabsim  archer2  fetch_results
+		
