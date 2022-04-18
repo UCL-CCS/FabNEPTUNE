@@ -197,12 +197,12 @@ Practical illustration
                         </V>
                       </GLOBALSYSSOLNINFO>
                      <PARAMETERS>
-                        <P> TimeStep        = 0.0001                 </P>
+                        <P> TimeStep        = 0.0001               </P>
                         <P> T_Final         = 1.0                  </P>
                         <P> NumSteps        = T_Final/TimeStep     </P>
                         <P> IO_infoSteps    = 10                   </P>
-                        <P> Ra              = ${Rayleigh}E2                </P>
-                        <P> Pr              = ${Prandtl}                  </P>
+                        <P> Ra              = ${Rayleigh}E2        </P>
+                        <P> Pr              = ${Prandtl}           </P>
                         <P> Kinvis          = Pr                   </P>
                     </PARAMETERS>
                     <BOUNDARYREGIONS>
@@ -259,23 +259,23 @@ Practical illustration
                  </FORCING>
                  <FILTERS>
                    <FILTER TYPE="AeroForces">
-                   <PARAM NAME="OutputFile"> NusseltTest1L </PARAM>
+                   <PARAM NAME="OutputFile"> NusseltTest1L  </PARAM>
                    <PARAM NAME="OutputFrequency"> 10        </PARAM>
-                   <PARAM NAME="Boundary"> B[2]              </PARAM>
+                   <PARAM NAME="Boundary"> B[2]             </PARAM>
                  </FILTER>
                    <FILTER TYPE="AeroForces">
-                   <PARAM NAME="OutputFile"> NusseltTest1R </PARAM>
+                   <PARAM NAME="OutputFile"> NusseltTest1R  </PARAM>
                    <PARAM NAME="OutputFrequency"> 10        </PARAM>
-                   <PARAM NAME="Boundary"> B[3]              </PARAM>
+                   <PARAM NAME="Boundary"> B[3]             </PARAM>
                  </FILTER>
                    <FILTER TYPE="HistoryPoints">
-                   <PARAM NAME="OutputFile"> PointTest </PARAM>
-                   <PARAM NAME="OutputFrequency"> 10      </PARAM>
-                   <PARAM NAME="Points"> 0.5 1.0 0.0   </PARAM>
+                   <PARAM NAME="OutputFile"> PointTest      </PARAM>
+                   <PARAM NAME="OutputFrequency"> 10        </PARAM>
+                   <PARAM NAME="Points"> 0.5 1.0 0.0        </PARAM>
                  </FILTER>
 	           <FILTER TYPE="AverageFields">
-    	           <PARAM NAME="OutputFile"> AveragedTest </PARAM>
-                   <PARAM NAME="SampleFrequency"> 10 </PARAM>
+    	           <PARAM NAME="OutputFile"> AveragedTest   </PARAM>
+                   <PARAM NAME="SampleFrequency"> 10        </PARAM>
 	         </FILTER>
                  </FILTERS>
                  </NEKTAR>
