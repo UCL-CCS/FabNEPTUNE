@@ -99,7 +99,6 @@ These examples assume that you have been able to run the basic FabSim examples d
 
 .. Note:: All the EasyVVUQ and EasySurrogate campaigns runs and execution, and the results analyse will be done on target machine which can be your localhost or remote HPC machine.
 
-Its a very simple example of a Convection2D
 
 The input files needed for this example are found in ``plugins/FabNEPTUNE/config_files/convection_2d_easyvvuq_easysurrogate_InRuAn*_DAS_QCGPJ``. This directory contains the following files that can be modified for your own purpose:
 
