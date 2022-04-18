@@ -258,7 +258,7 @@ Practical illustration
                   </FORCE>
                  </FORCING>
                  <FILTERS>
-                 <FILTER TYPE="AeroForces">
+                   <FILTER TYPE="AeroForces">
                    <PARAM NAME="OutputFile"> NusseltTest1L </PARAM>
                    <PARAM NAME="OutputFrequency"> 10        </PARAM>
                    <PARAM NAME="Boundary"> B[2]              </PARAM>
@@ -268,7 +268,7 @@ Practical illustration
                    <PARAM NAME="OutputFrequency"> 10        </PARAM>
                    <PARAM NAME="Boundary"> B[3]              </PARAM>
                  </FILTER>
-                 <FILTER TYPE="HistoryPoints">
+                   <FILTER TYPE="HistoryPoints">
                    <PARAM NAME="OutputFile"> PointTest </PARAM>
                    <PARAM NAME="OutputFrequency"> 10      </PARAM>
                    <PARAM NAME="Points"> 0.5 1.0 0.0   </PARAM>
