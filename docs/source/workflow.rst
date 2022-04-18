@@ -156,3 +156,6 @@ and copy the results back to our local machine with
 		
 		fabsim  archer2  fetch_results
 		
+		
+Practical illustration
+==============		
