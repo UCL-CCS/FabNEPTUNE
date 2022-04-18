@@ -251,7 +251,7 @@ Practical illustration
                      <FUNCTION NAME="DiffusionCoefficient">
                        <E VAR="T" VALUE="${DiffusionCoefficient}" />
                      </FUNCTION>
-                 </CONDITIONS>		
+                  </CONDITIONS>		
                   <FORCING>
                     <FORCE TYPE="Body">
                     <BODYFORCE> BodyForce </BODYFORCE>
@@ -259,27 +259,27 @@ Practical illustration
                  </FORCING>
                  <FILTERS>
                  <FILTER TYPE="AeroForces">
-                  <PARAM NAME="OutputFile"> NusseltTest1L </PARAM>
-                  <PARAM NAME="OutputFrequency"> 10        </PARAM>
-                  <PARAM NAME="Boundary"> B[2]              </PARAM>
-                </FILTER>
-                <FILTER TYPE="AeroForces">
-                 <PARAM NAME="OutputFile"> NusseltTest1R </PARAM>
-                 <PARAM NAME="OutputFrequency"> 10        </PARAM>
-                 <PARAM NAME="Boundary"> B[3]              </PARAM>
-               </FILTER>
-               <FILTER TYPE="HistoryPoints">
-                <PARAM NAME="OutputFile"> PointTest </PARAM>
-                <PARAM NAME="OutputFrequency"> 10      </PARAM>
-                <PARAM NAME="Points"> 0.5 1.0 0.0   </PARAM>
-              </FILTER>
-	       <FILTER TYPE="AverageFields">
-    	       <PARAM NAME="OutputFile"> AveragedTest </PARAM>
-               <PARAM NAME="SampleFrequency"> 10 </PARAM>
-	     </FILTER>
-             </FILTERS>
-             </NEKTAR>
-
+                   <PARAM NAME="OutputFile"> NusseltTest1L </PARAM>
+                   <PARAM NAME="OutputFrequency"> 10        </PARAM>
+                   <PARAM NAME="Boundary"> B[2]              </PARAM>
+                 </FILTER>
+                   <FILTER TYPE="AeroForces">
+                   <PARAM NAME="OutputFile"> NusseltTest1R </PARAM>
+                   <PARAM NAME="OutputFrequency"> 10        </PARAM>
+                   <PARAM NAME="Boundary"> B[3]              </PARAM>
+                 </FILTER>
+                 <FILTER TYPE="HistoryPoints">
+                   <PARAM NAME="OutputFile"> PointTest </PARAM>
+                   <PARAM NAME="OutputFrequency"> 10      </PARAM>
+                   <PARAM NAME="Points"> 0.5 1.0 0.0   </PARAM>
+                 </FILTER>
+	           <FILTER TYPE="AverageFields">
+    	           <PARAM NAME="OutputFile"> AveragedTest </PARAM>
+                   <PARAM NAME="SampleFrequency"> 10 </PARAM>
+	         </FILTER>
+                 </FILTERS>
+                 </NEKTAR>
+	         
 
 * ``campaign_params_remote.yml``: is the configuration file, in ``convection_2d_easyvvuq_easysurrogate_InRuAn*_DAS_QCGPJ`` subfolder, for EasyVVUQ sampler. If you need different sampler, parameter to be varied, or polynomial order, you can set them in this file. A working Example:
 
