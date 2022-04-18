@@ -20,7 +20,7 @@ Nektar++ on ARCHER2
    :scale: 50
 
 
-First load the following modules:
+After being successfully logged into the cluster, first export the following and load modules:
 
     .. code-block:: console
 		
