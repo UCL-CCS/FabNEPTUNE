@@ -285,7 +285,7 @@ Practical illustration
 
 	.. code-block:: yaml
 
-		 parameters:
+		parameters:
                            # <parameter_name:>
                            #   uniform_range: [<lower value>,<upper value>] 
                            Rayleigh:
