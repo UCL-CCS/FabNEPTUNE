@@ -259,24 +259,24 @@ Practical illustration
                  </FORCING>
                  <FILTERS>
                    <FILTER TYPE="AeroForces">
-                   <PARAM NAME="OutputFile"> NusseltTest1L  </PARAM>
-                   <PARAM NAME="OutputFrequency"> 10        </PARAM>
-                   <PARAM NAME="Boundary"> B[2]             </PARAM>
-                 </FILTER>
+                     <PARAM NAME="OutputFile"> NusseltTest1L  </PARAM>
+                     <PARAM NAME="OutputFrequency"> 10        </PARAM>
+                     <PARAM NAME="Boundary"> B[2]             </PARAM>
+                   </FILTER>
                    <FILTER TYPE="AeroForces">
-                   <PARAM NAME="OutputFile"> NusseltTest1R  </PARAM>
-                   <PARAM NAME="OutputFrequency"> 10        </PARAM>
-                   <PARAM NAME="Boundary"> B[3]             </PARAM>
-                 </FILTER>
+                     <PARAM NAME="OutputFile"> NusseltTest1R  </PARAM>
+                     <PARAM NAME="OutputFrequency"> 10        </PARAM>
+                     <PARAM NAME="Boundary"> B[3]             </PARAM>
+                   </FILTER>
                    <FILTER TYPE="HistoryPoints">
-                   <PARAM NAME="OutputFile"> PointTest      </PARAM>
-                   <PARAM NAME="OutputFrequency"> 10        </PARAM>
-                   <PARAM NAME="Points"> 0.5 1.0 0.0        </PARAM>
-                 </FILTER>
+                     <PARAM NAME="OutputFile"> PointTest      </PARAM>
+                     <PARAM NAME="OutputFrequency"> 10        </PARAM>
+                     <PARAM NAME="Points"> 0.5 1.0 0.0        </PARAM>
+                   </FILTER>
 	           <FILTER TYPE="AverageFields">
-    	           <PARAM NAME="OutputFile"> AveragedTest   </PARAM>
-                   <PARAM NAME="SampleFrequency"> 10        </PARAM>
-	         </FILTER>
+    	             <PARAM NAME="OutputFile"> AveragedTest   </PARAM>
+                     <PARAM NAME="SampleFrequency"> 10        </PARAM>
+	           </FILTER>
                  </FILTERS>
                  </NEKTAR>
 	         
