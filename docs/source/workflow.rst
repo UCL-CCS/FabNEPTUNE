@@ -231,22 +231,22 @@ Practical illustration
                        <N VAR="p" USERDEFINEDTYPE="H" VALUE="0" />
                      </REGION>
                      <REGION REF="3">
-                      <D VAR="u" VALUE="0" />
-                      <D VAR="v" VALUE="0" />
-                      <D VAR="T" VALUE="0" />
-                      <N VAR="p" USERDEFINEDTYPE="H" VALUE="0" />
+                       <D VAR="u" VALUE="0" />
+                       <D VAR="v" VALUE="0" />
+                       <D VAR="T" VALUE="0" />
+                       <N VAR="p" USERDEFINEDTYPE="H" VALUE="0" />
                      </REGION>
                      </BOUNDARYCONDITIONS>
                      <FUNCTION NAME="InitialConditions">
-                      <E VAR="u" VALUE="0" />
-                      <E VAR="v" VALUE="0" />
-                      <E VAR="T" VALUE="1-x" />
-                      <E VAR="p" VALUE="0" />
+                       <E VAR="u" VALUE="0" />
+                       <E VAR="v" VALUE="0" />
+                       <E VAR="T" VALUE="1-x" />
+                       <E VAR="p" VALUE="0" />
                      </FUNCTION>
                      <FUNCTION NAME="BodyForce">
-                      <E VAR="u" VALUE="0" EVARS="u v T p" />
-                      <E VAR="v" VALUE="Ra*Pr*T" EVARS="u v T p" />
-                      <E VAR="T" VALUE="0" EVARS="u v T p"  />
+                       <E VAR="u" VALUE="0" EVARS="u v T p" />
+                       <E VAR="v" VALUE="Ra*Pr*T" EVARS="u v T p" />
+                       <E VAR="T" VALUE="0" EVARS="u v T p"  />
                      </FUNCTION>
                      <FUNCTION NAME="DiffusionCoefficient">
                        <E VAR="T" VALUE="${DiffusionCoefficient}" />
