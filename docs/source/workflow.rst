@@ -295,7 +295,7 @@ A working example:
 .. image:: ../../images/min.png
    :alt: modelinputs
    :class: with-shadow
-   :scale: 30
+   :scale: 50
    
 Second important input file:
 
