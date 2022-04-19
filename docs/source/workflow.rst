@@ -314,7 +314,7 @@ Visual explanation of the concept
 		
 		[campaign_params_remote.yml] It is the configuration file, in convection_2d_easyvvuq_easysurrogate_InRuAn*_DAS_QCGPJ subfolder, for EasyVVUQ sampler. If you need different sampler, parameter to be varied, or polynomial order, you can set them in this file
 		
-Here, as shown in the following, F1-press_L, F1-visc_L, F1-pres_R and  F1-visc_R are selected as model outputs for Variance-based sensitivity analysis (Sobol method)
+Here, as shown in the following, F1-press_L, F1-visc_L, F1-pres_R and F1-visc_R are selected as model outputs for Variance-based sensitivity analysis (Sobol method)
 
 A working Example:
 
@@ -437,3 +437,6 @@ Result of the Analysis of EasySurrogate+EasyVVUQ+FabNEPTUNE simulation, based on
    :alt: mode_s
    :class: with-shadow
    :scale: 40   
+
+   
+.. Note:: If you wish to modify the model inputs/outputs then run EasySurrogate+EasyVVUQ+FabNEPTUNE simulation, there are several options for doing this.  It can be easily done by modification of python files: convection_2d_easyvvuq_init_run_analyse_remote.py and easyvvuq_convection_2d_RUN_remote.py, in convection_2d_easyvvuq_easysurrogate_InRuAn*_DAS_QCGPJ subfolder.   
