@@ -165,13 +165,19 @@ In the following we will provide a step-by-step demonstration of how to perform 
 step one
 --------
 
-Specific set of tasks required before submitting the job onto the remote/local machine. Two input files that are found in ``plugins/FabNEPTUNE/config_files/convection_2d_easyvvuq_easysurrogate_InRuAn*_DAS_QCGPJ``, are the most important files which can be modified for your own specific purpose:
+Specific set of tasks required before submitting the job onto the remote/local machine. Two input files that are found in:
 
-First important file:
+      .. code-block:: console
+             
+	     plugins/FabNEPTUNE/config_files/convection_2d_easyvvuq_easysurrogate_InRuAn*_DAS_QCGPJ 
+
+are the most important files which can be modified for your own specific purpose:
+
+``convection_2d_remote.template`` file:
  
     .. code-block:: console
 		
-		[convection_2d_remote.template] It is the convection2d input script in ``convection_2d_easyvvuq_easysurrogate_InRuAn*_DAS_QCGPJ`` subfolder, EasyVVUQ will substitute certain variables in this file to create the ensemble
+		[convection_2d_remote.template] It is the convection2d input script in convection_2d_easyvvuq_easysurrogate_InRuAn*_DAS_QCGPJ subfolder, EasyVVUQ will substitute certain variables in this file to create the ensemble
  
 Here, as shown in the following, Rayleigh, Prandtl, Temperature  and Diffusion Coefficient are selected as model inputs for Variance-based sensitivity analysis (Sobol method)
 
@@ -295,13 +301,13 @@ A working example:
 .. image:: ../../images/min.png
    :alt: modelinputs
    :class: with-shadow
-   :scale: 50
+   :scale: 40
    
-Second important input file:
+``campaign_params_remote.yml`` file:
 
     .. code-block:: console
 		
-		[campaign_params_remote.yml] It is the configuration file, in ``convection_2d_easyvvuq_easysurrogate_InRuAn*_DAS_QCGPJ`` subfolder, for EasyVVUQ sampler. If you need different sampler, parameter to be varied, or polynomial order, you can set them in this file
+		[campaign_params_remote.yml] It is the configuration file, in convection_2d_easyvvuq_easysurrogate_InRuAn*_DAS_QCGPJ subfolder, for EasyVVUQ sampler. If you need different sampler, parameter to be varied, or polynomial order, you can set them in this file
 		
 Here, as shown in the following, F1-press_L, F1-visc_L, F1-pres_R and  F1-visc_R are selected as model outputs for Variance-based sensitivity analysis (Sobol method)
 
