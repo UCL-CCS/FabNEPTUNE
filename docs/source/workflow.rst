@@ -214,8 +214,8 @@ A working example:
                         </V>
                       </GLOBALSYSSOLNINFO>
                      <PARAMETERS>
-                        <P> TimeStep        = 0.0001               </P>
-                        <P> T_Final         = 1.0                  </P>
+                        <P> TimeStep        = 0.0000001            </P>
+                        <P> T_Final         = 0.0001               </P>
                         <P> NumSteps        = T_Final/TimeStep     </P>
                         <P> IO_infoSteps    = 10                   </P>
                         <P> Ra              = ${Rayleigh}E2        </P>
@@ -299,6 +299,7 @@ A working example:
 
 
 Visual explanation of the concept
+---------------------------------
 
 .. image:: ../../images/minx.png
    :alt: modelinputs
@@ -321,7 +322,7 @@ A working Example:
                            # <parameter_name:>
                            #   uniform_range: [<lower value>,<upper value>] 
                            Rayleigh:
-                                   uniform_range: [0.5, 1.5]
+                                   uniform_range: [0.5, 20000]
                            Prandtl:
                                    uniform_range: [5, 8.0]
                            DiffusionCoefficient:
@@ -349,7 +350,7 @@ A working Example:
                   Rayleigh:
                      type: "float"
                      min: "0.0"
-                     max: "2.5"
+                     max: "21000"
                      default: "1.0"
 
                   Prandtl:
@@ -381,6 +382,7 @@ A working Example:
 
 
 Visual explanation of the concept
+---------------------------------
 
 .. image:: ../../images/mout.png
    :alt: modeloutputs
