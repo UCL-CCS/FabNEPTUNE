@@ -161,13 +161,21 @@ Practical illustration
 ==============	
 
 In the following we will provide a step-by-step demonstration of how to perform a job submission or how to analyze a problem.
-Specific set of tasks required before submitting the job onto the remote/local machine. The following input files that are found in ``plugins/FabNEPTUNE/config_files/convection_2d_easyvvuq_easysurrogate_InRuAn*_DAS_QCGPJ``, are the most important files which can be modified for your own specific purpose:
+
+step one
+--------
+
+Specific set of tasks required before submitting the job onto the remote/local machine. Two input files that are found in ``plugins/FabNEPTUNE/config_files/convection_2d_easyvvuq_easysurrogate_InRuAn*_DAS_QCGPJ``, are the most important files which can be modified for your own specific purpose:
+
+First important file:
  
     .. code-block:: console
 		
 		[convection_2d_remote.template] It is the convection2d input script in ``convection_2d_easyvvuq_easysurrogate_InRuAn*_DAS_QCGPJ`` subfolder, EasyVVUQ will substitute certain variables in this file to create the ensemble
  
-Here a working example:
+Here, as shown in the following, Rayleigh Prandtl Temperature  and Diffusion Coefficient are selected as model inputs for Variance-based sensitivity analysis (Sobol method)
+
+A working example:
 
 
            .. code-block:: bash
@@ -282,13 +290,23 @@ Here a working example:
 	           </FILTER>
                  </FILTERS>
                  </NEKTAR>
-	         
+
+
+.. image:: ../../images/min.png
+   :align: center
+   :alt: modelinputs
+   :class: with-shadow
+   :scale: 50
+   
+Second important input file:
 
     .. code-block:: console
 		
 		[campaign_params_remote.yml] It is the configuration file, in ``convection_2d_easyvvuq_easysurrogate_InRuAn*_DAS_QCGPJ`` subfolder, for EasyVVUQ sampler. If you need different sampler, parameter to be varied, or polynomial order, you can set them in this file
 		
-Here a working Example:
+Here, as shown in the following, F1-press_L, F1-visc_L, F1-pres_R and  F1-visc_R are selected as model outputs for Variance-based sensitivity analysis (Sobol method)
+
+A working Example:
 
 	.. code-block:: yaml
 
@@ -355,3 +373,34 @@ Here a working Example:
                 dimension_adaptive: False
 
 
+.. image:: ../../images/mout.png
+   :align: center
+   :alt: modeloutputs
+   :class: with-shadow
+   :scale: 50
+   
+step two
+-------- 
+
+Submit a simulation to a remote machine using the command:
+
+    .. code-block:: console
+		
+		fabsim archer2 Convection2D_remote:convection_2d_test
+		
+		
+step three
+---------- 
+
+Copy the results back to our local machine with
+
+    .. code-block:: console
+		
+		fabsim  archer2  fetch_results
+		
+		
+step four
+----------
+
+Result Analysis of EasySurrogate+EasyVVUQ+FabNEPTUNE simulation, based on Sobol method and a surrogate method (Deep Active Subspace
+), are  shown in the following:
