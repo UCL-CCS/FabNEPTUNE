@@ -381,7 +381,7 @@ A working Example:
 .. image:: ../../images/mout.png
    :alt: modeloutputs
    :class: with-shadow
-   :scale: 30
+   :scale: 40
    
 step two
 -------- 
@@ -392,7 +392,18 @@ Submit a simulation to a remote machine using the command:
 		
 		fabsim archer2 Convection2D_init_run_analyse_campaign_remote:convection_2d_easyvvuq_easysurrogate_InRuAn1_DAS_QCGPJ
 		
-		
+
+
+
+You can check anytime the progress of simulations by looking at the error file (JobID-%j.error)
+
+
+.. image:: ../../images/err.png
+   :alt: err_ss
+   :class: with-shadow
+   :scale: 40	
+   
+   
 step three
 ---------- 
 
@@ -401,20 +412,20 @@ Copy the results back to our local machine with
     .. code-block:: console
 		
 		fabsim  archer2  fetch_results
-		
+	
 		
 step four
 ----------
 
-Result Analysis of EasySurrogate+EasyVVUQ+FabNEPTUNE simulation, based on Sobol method and a surrogate method (Deep Active Subspace
+Result of the Analysis of EasySurrogate+EasyVVUQ+FabNEPTUNE simulation, based on Sobol method and a surrogate method (Deep Active Subspace
 ), are  shown in the following:
 
 .. image:: ../../images/ssm.png
    :alt: model_ss
    :class: with-shadow
-   :scale: 30
+   :scale: 40
    
 .. image:: ../../images/sm.png
    :alt: mode_s
    :class: with-shadow
-   :scale: 30   
+   :scale: 40   
