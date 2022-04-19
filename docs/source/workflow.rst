@@ -171,7 +171,7 @@ Specific set of tasks required before submitting the job onto the remote/local m
              
 	     plugins/FabNEPTUNE/config_files/convection_2d_easyvvuq_easysurrogate_InRuAn*_DAS_QCGPJ 
 
-are the most important files which can be modified for your own specific purpose:
+are the most important files which can be modified for your own specific purpose.
 
 ``convection_2d_remote.template`` file:
  
@@ -298,7 +298,9 @@ A working example:
                  </NEKTAR>
 
 
-.. image:: ../../images/min.png
+Visual explanation of the concept
+
+.. image:: ../../images/minx.png
    :alt: modelinputs
    :class: with-shadow
    :scale: 40
@@ -378,6 +380,8 @@ A working Example:
                 dimension_adaptive: False
 
 
+Visual explanation of the concept
+
 .. image:: ../../images/mout.png
    :alt: modeloutputs
    :class: with-shadow
@@ -386,7 +390,7 @@ A working Example:
 step two
 -------- 
 
-Submit a simulation to a remote machine using the command:
+Submit a simulation to a remote/local machine using the command:
 
     .. code-block:: console
 		
@@ -395,7 +399,7 @@ Submit a simulation to a remote machine using the command:
 
 
 
-You can check anytime the progress of simulations by looking at the error file (JobID-%j.error)
+You can check anytime the progress of simulation by looking at the error file (JobID-%j.error)
 
 
 .. image:: ../../images/err.png
@@ -407,7 +411,7 @@ You can check anytime the progress of simulations by looking at the error file (
 step three
 ---------- 
 
-Copy the results back to our local machine with
+Copy the results back to you local machine with
 
     .. code-block:: console
 		
@@ -418,7 +422,7 @@ step four
 ----------
 
 Result of the Analysis of EasySurrogate+EasyVVUQ+FabNEPTUNE simulation, based on Sobol method and a surrogate method (Deep Active Subspace
-), are  shown in the following:
+), are shown in the following examples:
 
 .. image:: ../../images/ssm.png
    :alt: model_ss
