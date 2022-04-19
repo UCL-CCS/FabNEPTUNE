@@ -160,7 +160,7 @@ and copy the results back to our local machine with
 Practical illustration
 ==============	
 
-In the following we will provide a step-by-step demonstration of how to perform a job submission or how to analyze a problem.
+In the following we will provide a step-by-step demonstration of how to perform a job submission and also we will demonstrate the output of analysis.
 
 step one
 --------
