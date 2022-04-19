@@ -405,10 +405,14 @@ step four
 Result Analysis of EasySurrogate+EasyVVUQ+FabNEPTUNE simulation, based on Sobol method and a surrogate method (Deep Active Subspace
 ), are  shown in the following:
 
-.. image:: ../../images/msur.png
+.. image:: ../../images/ssm.png
    :align: center
    :alt: modeloutputs
    :class: with-shadow
    :scale: 30
    
-   
+.. image:: ../../images/sm.png
+   :align: center
+   :alt: modeloutputs
+   :class: with-shadow
+   :scale: 30   
