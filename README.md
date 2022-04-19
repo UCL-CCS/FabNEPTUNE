@@ -7,6 +7,8 @@
  <img height="200" src="logo.png"/>
 </br>
 
+FabNEPTUNE is a tool that allows for the easy execution of NEPTUNE project simulations (especially convection2d and convection3d) in local or remote machines.
+
 For the full FabNEPTUNE documentation, please visit https://fabneptune.readthedocs.io
 
 # How to run a Convection2D and Convection3D (test) Jobs
