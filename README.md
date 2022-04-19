@@ -7,6 +7,8 @@
  <img height="200" src="logo.png"/>
 </br>
 
+For the full FabNEPTUNE documentation, please visit https://fabneptune.readthedocs.io
+
 # How to run a Convection2D and Convection3D (test) Jobs
 
 These examples assume that you have been able to run the basic FabSim examples described in the other documentation files, and that you have built and configured Nektar++ (https://www.nektar.info/) on the target machine.
