@@ -6,7 +6,7 @@ FabNEPTUNE Workflow
 
 Introduction
 ------------
-FabNEPTUNE is a tool that allows for the easy execution of NEPTUNE project simulations (especially convection2d and convection3d) in local or remote machines. This section of the documentation will cover an example of how one would go about configuring FabNEPTUNE and running a simulation using any NEPTUNE project code(any implemented project inside FabNEPTUNE).
+FabNEPTUNE is a tool that allows for the easy execution of NEPTUNE project simulations (especially convection2d and convection3d) in local or remote machines. This section of the documentation will cover an example of how one would go about configuring FabNEPTUNE and running a simulation using any NEPTUNE project code (any implemented NEPTUNE project inside FabNEPTUNE).
 
 
 Example of workflow for FabNEPTUNE (convection2d and convection3d)
@@ -425,7 +425,7 @@ Copy the results back to you local machine with
 step four
 ----------
 
-Result of the Analysis of EasySurrogate+EasyVVUQ+FabNEPTUNE simulation, based on Sobol method and a surrogate method (Deep Active Subspace
+Result of the analysis of EasySurrogate+EasyVVUQ+FabNEPTUNE simulation, based on Sobol method and a surrogate method (Deep Active Subspace
 ), are shown in the following examples:
 
 .. image:: ../../images/ssm.png
