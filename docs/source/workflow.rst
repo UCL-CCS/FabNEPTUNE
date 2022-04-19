@@ -173,7 +173,7 @@ First important file:
 		
 		[convection_2d_remote.template] It is the convection2d input script in ``convection_2d_easyvvuq_easysurrogate_InRuAn*_DAS_QCGPJ`` subfolder, EasyVVUQ will substitute certain variables in this file to create the ensemble
  
-Here, as shown in the following, Rayleigh Prandtl Temperature  and Diffusion Coefficient are selected as model inputs for Variance-based sensitivity analysis (Sobol method)
+Here, as shown in the following, Rayleigh, Prandtl, Temperature  and Diffusion Coefficient are selected as model inputs for Variance-based sensitivity analysis (Sobol method)
 
 A working example:
 
@@ -296,7 +296,7 @@ A working example:
    :align: center
    :alt: modelinputs
    :class: with-shadow
-   :scale: 50
+   :scale: 30
    
 Second important input file:
 
@@ -377,7 +377,7 @@ A working Example:
    :align: center
    :alt: modeloutputs
    :class: with-shadow
-   :scale: 50
+   :scale: 30
    
 step two
 -------- 
@@ -386,7 +386,7 @@ Submit a simulation to a remote machine using the command:
 
     .. code-block:: console
 		
-		fabsim archer2 Convection2D_remote:convection_2d_test
+		fabsim archer2 Convection2D_init_run_analyse_campaign_remote:convection_2d_easyvvuq_easysurrogate_InRuAn1_DAS_QCGPJ
 		
 		
 step three
@@ -404,3 +404,11 @@ step four
 
 Result Analysis of EasySurrogate+EasyVVUQ+FabNEPTUNE simulation, based on Sobol method and a surrogate method (Deep Active Subspace
 ), are  shown in the following:
+
+.. image:: ../../images/msur.png
+   :align: center
+   :alt: modeloutputs
+   :class: with-shadow
+   :scale: 30
+   
+   
