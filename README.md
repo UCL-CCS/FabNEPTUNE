@@ -1,3 +1,7 @@
+[![GitHub issues](https://img.shields.io/github/issues/UCL-CCS/FabNEPTUNE)](https://github.com/UCL-CCS/FabNEPTUNE/issues)
+[![GitHub forks](https://img.shields.io/github/forks/UCL-CCS/FabNEPTUNE)](https://github.com/UCL-CCS/FabNEPTUNE/network)
+[![GitHub stars](https://img.shields.io/github/stars/UCL-CCS/FabNEPTUNE)](https://github.com/UCL-CCS/FabNEPTUNE/stargazers)
+
 # FabNEPTUNE
 <br>
  <img height="200" src="logo.png"/>
