@@ -251,11 +251,11 @@ Practical illustration
                      <FUNCTION NAME="DiffusionCoefficient">
                        <E VAR="T" VALUE="${DiffusionCoefficient}" />
                      </FUNCTION>
-                  </CONDITIONS>		
-                  <FORCING>
+                 </CONDITIONS>		
+                 <FORCING>
                     <FORCE TYPE="Body">
                     <BODYFORCE> BodyForce </BODYFORCE>
-                  </FORCE>
+                 </FORCE>
                  </FORCING>
                  <FILTERS>
                    <FILTER TYPE="AeroForces">
