@@ -161,14 +161,13 @@ Practical illustration
 ==============	
 
 In the following we will provide a step-by-step demonstration of how to perform a job submission or how to analyze a problem.
-
- Specific set of tasks required before submitting the job onto the remote/local machine. The following input files that are found in ``plugins/FabNEPTUNE/config_files/convection_2d_easyvvuq_easysurrogate_InRuAn*_DAS_QCGPJ``, are the most important files which can be modified for your own specific purpose:
+Specific set of tasks required before submitting the job onto the remote/local machine. The following input files that are found in ``plugins/FabNEPTUNE/config_files/convection_2d_easyvvuq_easysurrogate_InRuAn*_DAS_QCGPJ``, are the most important files which can be modified for your own specific purpose:
  
     .. code-block:: console
 		
-		``convection_2d_remote.template``
+		[convection_2d_remote.template] It is the convection2d input script in ``convection_2d_easyvvuq_easysurrogate_InRuAn*_DAS_QCGPJ`` subfolder, EasyVVUQ will substitute certain variables in this file to create the ensemble
  
-It is the convection2d input script in ``convection_2d_easyvvuq_easysurrogate_InRuAn*_DAS_QCGPJ`` subfolder, EasyVVUQ will substitute certain variables in this file to create the ensemble. Here a working Example:
+Here a working example:
 
 
            .. code-block:: bash
@@ -287,9 +286,9 @@ It is the convection2d input script in ``convection_2d_easyvvuq_easysurrogate_In
 
     .. code-block:: console
 		
-		``campaign_params_remote.yml``
+		[campaign_params_remote.yml] It is the configuration file, in ``convection_2d_easyvvuq_easysurrogate_InRuAn*_DAS_QCGPJ`` subfolder, for EasyVVUQ sampler. If you need different sampler, parameter to be varied, or polynomial order, you can set them in this file
 		
-It is the configuration file, in ``convection_2d_easyvvuq_easysurrogate_InRuAn*_DAS_QCGPJ`` subfolder, for EasyVVUQ sampler. If you need different sampler, parameter to be varied, or polynomial order, you can set them in this file. Here a working Example:
+Here a working Example:
 
 	.. code-block:: yaml
 
