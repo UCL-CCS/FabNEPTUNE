@@ -255,7 +255,7 @@ Finally you need to create a new virtual environment, and update the following f
 		Convection2D_init_run_analyse_campaign_remote
 
 
-which  are found in ``plugins/FabNEPTUNE/config_files/convection_2d_easyvvuq_InRuAn*_QCGPJ`` and ``plugins/FabNEPTUNE/config_files/convection_2d_easyvvuq_easysurrogate_InRuAn*_DAS_QCGPJ`` and ``plugins/FabNEPTUNE/templates/convection_2d_easyvvuq_easysurrogate_InRuAn*_DAS_QCGPJ``
+which  are found in ``plugins/FabNEPTUNE/config_files/convection_2d_easyvvuq_InRuAn*_QCGPJ`` and ``plugins/FabNEPTUNE/config_files/convection_2d_easyvvuq_easysurrogate_InRuAn*_DAS_QCGPJ`` and ``plugins/FabNEPTUNE/templates``
 
 This environment is used by EasyVVUQ campaign. 
 
