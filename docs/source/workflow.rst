@@ -6,7 +6,7 @@ FabNEPTUNE Workflow
 
 Introduction
 ------------
-FabNEPTUNE is a tool that allows for the easy execution of NEPTUNE project simulations(especially convection2d and convection3d) in local or remote machines. This section of the documentation will cover an example of how one would go about configuring FabNEPTUNE and running a simulation using any NEPTUNE project code.
+FabNEPTUNE is a tool that allows for the easy execution of NEPTUNE project simulations (especially convection2d and convection3d) in local or remote machines. This section of the documentation will cover an example of how one would go about configuring FabNEPTUNE and running a simulation using any NEPTUNE project code(any implemented project inside FabNEPTUNE).
 
 
 Example of workflow for FabNEPTUNE (convection2d and convection3d)
@@ -174,6 +174,7 @@ Specific set of tasks required before submitting the job onto the remote/local m
 are the most important files which can be modified for your own specific purpose.
 
 ``convection_2d_remote.template`` file:
+---------------------------------------
  
     .. code-block:: console
 		
@@ -307,6 +308,7 @@ Visual explanation of the concept
    :scale: 40
    
 ``campaign_params_remote.yml`` file:
+------------------------------------
 
     .. code-block:: console
 		
