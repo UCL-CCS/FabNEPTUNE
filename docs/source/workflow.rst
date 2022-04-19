@@ -439,4 +439,5 @@ Result of the analysis of EasySurrogate+EasyVVUQ+FabNEPTUNE simulation, based on
    :scale: 40   
 
    
-.. Note:: If you wish to modify the model inputs/outputs then the simulation, there are several options for doing this. It can be easily done by modification of python files: convection_2d_easyvvuq_init_run_analyse_remote.py and easyvvuq_convection_2d_RUN_remote.py, in convection_2d_easyvvuq_easysurrogate_InRuAn*_DAS_QCGPJ subfolder.   
+.. Note:: If you wish to modify the model inputs/outputs then run the simulation, there are several options for doing this. It can be easily done by modification of python files (in convection_2d_easyvvuq_easysurrogate_InRuAn*_DAS_QCGPJ subfolder):
+convection_2d_easyvvuq_init_run_analyse_remote.py and easyvvuq_convection_2d_RUN_remote.py  
