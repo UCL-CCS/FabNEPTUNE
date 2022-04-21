@@ -157,7 +157,7 @@ and copy the results back to our local machine with
 		fabsim  archer2  fetch_results
 		
 		
-Practical illustration
+Practical Illustration
 ==============	
 
 In the following we will provide a step-by-step demonstration of how to perform a job submission and also we will demonstrate the output of analysis.
@@ -386,7 +386,7 @@ A working Example:
 Visual explanation of the concept
 ---------------------------------
 
-.. image:: ../../images/mout.png
+.. image:: ../../images/cov_2d_output.png
    :alt: modeloutputs
    :class: with-shadow
    :scale: 40
@@ -431,7 +431,7 @@ Result of the analysis of EasySurrogate+EasyVVUQ+FabNEPTUNE simulation, based on
 Visual explanation of the surrogate method
 ------------------------------------------
 
-.. image:: ../../images/msur.png
+.. image:: ../../images/surrogate.png
    :alt: surmodel
    :class: with-shadow
    :scale: 40
