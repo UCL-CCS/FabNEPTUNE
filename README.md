@@ -105,5 +105,5 @@ and as always copy the results back to your local machine with
 ```
  
 <br>
- <img height="200" src="images/important.png"/>
+ <img height="300" src="images/important.png"/>
 </br> 
