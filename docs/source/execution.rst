@@ -140,4 +140,4 @@ To copy the results back to your local machine type:
    :align: center
    :alt: important
    :class: with-shadow
-   :scale: 50
+   :scale: 40
