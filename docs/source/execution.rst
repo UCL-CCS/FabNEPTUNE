@@ -136,4 +136,8 @@ To copy the results back to your local machine type:
 	       fabsim  <remote machine name>   fetch_results
 	       
 
-
+.. image:: ../../images/important.png
+   :align: center
+   :alt: important
+   :class: with-shadow
+   :scale: 50
