@@ -104,7 +104,7 @@ and as always copy the results back to your local machine with
  
 ```
 
-<br align="center">
+<p align="center" width="100%">
  <img height="200" src="images/important.png"/>
-</br> 
+</p> 
 
