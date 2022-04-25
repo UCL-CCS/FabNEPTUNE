@@ -80,7 +80,7 @@ Before being able to run FabNEPTUNE [with the assumption that you have been able
 
 * To install FabSim3 tool, please follow the installation from https://fabsim3.readthedocs.io/en/latest/installation.html
 
-* To install FabNEPTUNE plugin, simple type:
+* To install FabNEPTUNE plugin, simply type:
 
     .. code-block:: console
 		
