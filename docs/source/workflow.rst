@@ -43,8 +43,6 @@ Increasing Ra means that the simulation has finer features (e.g. thinner boundar
 
 .. image:: ../../images/conv.png
    :align: center
-   :alt: Miniconda
-   :target: https://docs.conda.io/en/latest/miniconda.html
    :class: with-shadow
    :scale: 50
 
