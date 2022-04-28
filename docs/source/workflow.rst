@@ -83,7 +83,7 @@ The next important file that needs to be updated is
 	
               FabSim3/plugins/FabNEPTUNE/machines_FabNEPTUNE_user.yml 
 
-In this file you can set the path to the convection2d/3d executable on the remote machine which are Nektar++ executable and the input file names, and the remote run command. Here we assume that you have been able to run the basic FabSim examples described in the other documentation files, and that you have configured and built Nektar++ (https://www.nektar.info/) on the target machine, and successfully tested the executable code!. However, most HPC clusters could have Nektar++ available as a module and this can be added in the loaded modules section of the file. This means that the ``convection2d_exec`` parameter can be set to the path of the compiled executable. For example, archer2 remote machine might look like:
+In this file you can set the path to the convection2d/3d executable on the remote machine which are Nektar++ executable and the input file names, and the remote run command. Here we assume that you have been able to run the basic FabSim examples described in the other documentation files, and that you have configured and built Nektar++ (https://www.nektar.info/) on the target machine, and successfully tested the executable code!. However, most HPC clusters could have Nektar++ available as a module and this can be added in the loaded modules section of the file. This means that the ``convection2d_exec`` parameter can be set to the path of the compiled executable. For example, for archer2 (remote machine) it might look like:
 
 	.. code-block:: yaml
 
@@ -103,7 +103,7 @@ In this file you can set the path to the convection2d/3d executable on the remot
 		   modules:
 		      loaded: ["python"]
 
-After all the above configurations done we still would need to update ``FabSim3/fabsim/deploy/templates``. For example, the template (slurm-archer2) for archer2 remote machine might look like:
+After all the above configurations done we still would need to update ``FabSim3/fabsim/deploy/templates``. For example, the template (slurm-archer2) for archer2 might look like:
 
            .. code-block:: bash
 	   
@@ -142,7 +142,7 @@ After all the above configurations done we still would need to update ``FabSim3/
                  export LD_LIBRARY_PATH=/opt/gcc/10.2.0/snos/lib64:$NEK_DIR/ThirdParty/dist/lib:$NEK_DIR/dist/lib64:$LD_LIBRARY_PATH
                  export PATH="/mnt/lustre/a2fs-work2/work/e723/e723/kevinb/nektarpp/build/dist/bin:$PATH"
 
-Once all have been done, we can submit a simulation to a remote machine using the command:
+Once all has been done, we can submit a simulation to a remote machine using the command:
 
     .. code-block:: console
 		
