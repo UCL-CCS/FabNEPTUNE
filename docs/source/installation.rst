@@ -249,15 +249,38 @@ Finally you need to create a new virtual environment, and update the following f
 
     .. code-block:: console
 		
-		easyvvuq_convection_2d_RUN_localhost.py
-                easyvvuq_convection_2d_RUN_remote.py
+		convection_2d_easyvvuq_init_run_analyse_local.py
+                convection_2d_easyvvuq_init_run_analyse_remote.py
 		Convection2D_init_run_analyse_campaign_local
 		Convection2D_init_run_analyse_campaign_remote
 
 
 which  are found in ``plugins/FabNEPTUNE/config_files/convection_2d_easyvvuq_InRuAn*_QCGPJ`` and ``plugins/FabNEPTUNE/config_files/convection_2d_easyvvuq_easysurrogate_InRuAn*_DAS_QCGPJ`` and ``plugins/FabNEPTUNE/templates``
 
-This environment is used by EasyVVUQ campaign. 
+This environment is used by EasyVVUQ campaign. For example if you want to execute the convection jobs on a remote machine do only the following:
+
+First, open the file "convection_2d_easyvvuq_init_run_analyse_remote.py" and modify it with your path (your virtual environment)
+
+     .. code-block:: console
+     
+                       ...
+                       with QCGPJPool(template_params={'venv': '/mnt/lustre/a2fswork2/work/e723/e723/kevinb/venv_kevin'}) as qcgpj:
+                       campaign.execute(pool=qcgpj).collate(progress_bar=True)
+                       ...
+
+
+and then open  "FabNEPTUNE/templates/Convection2D_init_run_analyse_campaign_remote" and modify it with your path (your python environment)
+
+     .. code-block:: console
+     
+                       ...
+                       /mnt/lustre/a2fs-work2/work/e723/e723/kevinb/miniconda3/envs/py38/bin/python3.8                        
+		       convection_2d_easyvvuq_init_run_analyse_remote.py     $machine_name    '$run_command_remote'   $convection_2d_exec
+                       ...
+
+
+.. Note:: If you  want to run FabNEPTUNE on your local machine and execute the convection jobs on a remote machine (e.g. fabsim  archer2 ...), you need to have the virtual environment on remote machine and you only need to have FabNEPTUNE installed on your local machine (no need for the additional installation of FabNEPTUNE on a remote machine!)
+
 
 You can install virtualenv using:
     .. code-block:: console
