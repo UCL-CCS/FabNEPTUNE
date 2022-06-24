@@ -78,7 +78,7 @@ FabNEPTUNE Installation
 
 Before being able to run FabNEPTUNE [with the assumption that you have been able to run the basic FabSim examples described in the other documentation files, and that you have configured and built Nektar++ (https://www.nektar.info/) on the target machine, and  successfully tested the executable code!], you should install FabNEPTUNE inside of FabSim3. This will  provide functionality to extend FabSim3's workflow and remote submission capabilities to NEPTUNE specific tasks. 
 
-* To install FabSim3 tool, please follow the installation from https://fabsim3.readthedocs.io/en/latest/installation.html
+* To install FabSim3 tool, please follow the installation from https://fabsim3.readthedocs.io/en/latest/installation/
 
 * To install FabNEPTUNE plugin, simply type:
 
