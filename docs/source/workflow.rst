@@ -61,7 +61,7 @@ Before submitting the simulation to a remote machine, two YAML files must be edi
 
       .. code-block:: yaml
       
-           FabSim3/deploy/machines_user.yml 
+           FabSim3/fabsim/deploy/machines_user.yml 
 
 and add the login credentials in the template so that FabNEPTUNE knows where to run the simulation. 
 The following example shows what parameters (username, project, budget and sshpass) need to be defined for a remote machine name ARCHER2 (the UK National Supercomputer). Other machines may have more or less parameters that need to be defined.
@@ -73,8 +73,6 @@ The following example shows what parameters (username, project, budget and sshpa
                          project: "e123"
                          budget: "e123-user"
                          sshpass: "<ARCHER2-password>"
-                         manual_sshpass: true
-
 
 
 The next important file that needs to be updated is 
